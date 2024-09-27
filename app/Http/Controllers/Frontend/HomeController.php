@@ -66,11 +66,24 @@ class HomeController extends Controller
                 ->orderBy('id', 'DESC')
                 ->take(4)
                 ->get();
+            
+            $categorySectionFive = News::where('category_id', $HomeSectionSetting->category_section_five)
+                ->activeEntries()->withLocalize()
+                ->orderBy('id', 'DESC')
+                ->take(4)
+                ->get();
+            $categorySectionSix = News::where('category_id', $HomeSectionSetting->category_section_six)
+                ->activeEntries()->withLocalize()
+                ->orderBy('id', 'DESC')
+                ->take(4)
+                ->get();
         } else {
             $categorySectionOne = collect();
             $categorySectionTwo = collect();
             $categorySectionThree = collect();
             $categorySectionFour = collect();
+            $categorySectionFive = collect();
+            $categorySectionSix = collect();
         }
 
 
@@ -96,6 +109,8 @@ class HomeController extends Controller
             'categorySectionTwo',
             'categorySectionThree',
             'categorySectionFour',
+            'categorySectionFive',
+            'categorySectionSix',
             'mostViewedPosts',
             'socialCounts',
             'mostCommonTags',
@@ -140,7 +155,7 @@ class HomeController extends Controller
 
         $ad = Ad::first();
 
-        return view('frontend.news-details', compact('news', 'recentNews', 'mostCommonTags', 'nextPost', 'previousPost', 'relatedPosts', 'socialCounts', 'ad'));
+        return view('news-details', compact('news', 'recentNews', 'mostCommonTags', 'nextPost', 'previousPost', 'relatedPosts', 'socialCounts', 'ad'));
     }
 
     public function news(Request $request)

@@ -14,6 +14,8 @@ class HomeSectionSetting extends Model
         'category_section_two',
         'category_section_three',
         'category_section_four',
+        'category_section_five',
+        'category_section_six',
         'language'
     ];
 }

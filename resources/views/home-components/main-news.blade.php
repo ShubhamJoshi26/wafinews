@@ -167,7 +167,7 @@
                 {{-- </div>
           </div> --}}
                 <div class="block color-orange">
-                    <h3 class="utf_block_title"><span>Lifestyle News</span></h3>
+                    <h3 class="utf_block_title"><span>{{ $categorySectionTwo->first()->category->name }}</span></h3>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             @foreach ($categorySectionTwo as $key => $newsTwo)
@@ -323,7 +323,7 @@
                             </ul>
                         </div>
                     </div>
-
+                    {{-- trending news section --}}
                     {{-- <div class="widget color-default m-bottom-0">
               <h3 class="utf_block_title"><span>Trending News</span></h3>
               <div id="utf_post_slide" class="owl-carousel owl-theme utf_post_slide">
@@ -347,9 +347,119 @@
                   </div>                  
                 </div>
               </div>
-            </div> --}}
+                </div> --}}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+<section class="utf_block_wrapper p-bottom-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="block color-dark-violet">
+            <h3 class="utf_block_title"><span>{{ $categorySectionFour->first()->category->name }}</span></h3>
+            @foreach ($categorySectionFour as $key => $newsFour)
+                @if ($key == 0)
+                    <div class="utf_post_overaly_style clearfix">
+                        <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsFour->slug) }}"> <img class="img-fluid" src="{{ asset($newsFour->image) }}" alt="" /> </a> </div>
+                        <div class="utf_post_content">
+                        <h2 class="utf_post_title"> <a href="{{ route('news-details', $newsFour->slug) }}">{!! truncate($newsFour->title) !!}</a> </h2>
+                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsFour->slug) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->create_at)) }}</span> </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+            <div class="utf_list_post_block">
+              <ul class="utf_list_post">
+                @foreach ($categorySectionFour as $key => $newsFour)
+                    @if ($key > 0 && $key<=4)
+                        <li class="clearfix">
+                            <div class="utf_post_block_style post-float clearfix">
+                            <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsFour->slug) }}"> <img class="img-fluid" src="{{ asset($newsFour->image) }}" alt="" /> </a> </div>                    
+                            <div class="utf_post_content">
+                                <h2 class="utf_post_title title-small"> <a href="{{ route('news-details', $newsFour->slug) }}">{!! truncate($newsFour->title) !!}</a> </h2>
+                                <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsFour->slug) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->create_at)) }}</span> </div>
+                            </div>
+                            </div>
+                        </li>
+                    @endif
+                @endforeach
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="block color-dark-blue">
+              <h3 class="utf_block_title"><span>{{ $categorySectionFive->first()->category->name }}</span></h3>
+              @foreach ($categorySectionFive as $key => $newsFive)
+                  @if ($key == 0)
+                    <div class="utf_post_overaly_style clearfix">
+                        <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsFive->slug) }}"> <img class="img-fluid" src="{{ asset($newsFive->image) }}" alt="" /> </a> </div>
+                        <div class="utf_post_content">
+                        <h2 class="utf_post_title"> <a href="{{ route('news-details', $newsFive->slug) }}">{!! truncate($newsFive->title) !!}</a> </h2>
+                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsFive->slug) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->create_at)) }}</span> </div>
+                        </div>
+                    </div>
+                  @endif
+              @endforeach
+              <div class="utf_list_post_block">
+                <ul class="utf_list_post">
+                  @foreach ($categorySectionFive as $key => $newsFive)
+                      @if ($key > 0 && $key<=4)
+                          <li class="clearfix">
+                              <div class="utf_post_block_style post-float clearfix">
+                              <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsFive->slug) }}"> <img class="img-fluid" src="{{ asset($newsFive->image) }}" alt="" /> </a> </div>                    
+                              <div class="utf_post_content">
+                                  <h2 class="utf_post_title title-small"> <a href="{{ route('news-details', $newsFive->slug) }}">{!! truncate($newsFive->title) !!}</a> </h2>
+                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsFive->slug) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->create_at)) }}</span> </div>
+                              </div>
+                              </div>
+                          </li>
+                      @endif
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-lg-4">
+            <div class="block color-dark-aqua">
+              <h3 class="utf_block_title"><span>{{ $categorySectionSix->first()->category->name }}</span></h3>
+              @foreach ($categorySectionSix as $key => $newsSix)
+                  @if ($key == 0)
+                    <div class="utf_post_overaly_style clearfix">
+                        <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsSix->slug) }}"> <img class="img-fluid" src="{{ asset($newsSix->image) }}" alt="" /> </a> </div>
+                        <div class="utf_post_content">
+                        <h2 class="utf_post_title"> <a href="{{ route('news-details', $newsSix->slug) }}">{!! truncate($newsSix->title) !!}</a> </h2>
+                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsSix->slug) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->create_at)) }}</span> </div>
+                        </div>
+                    </div>
+                  @endif
+              @endforeach
+              
+              <div class="utf_list_post_block">
+                <ul class="utf_list_post">
+                  @foreach ($categorySectionSix as $key => $newsSix)
+                      @if ($key > 0 && $key<=4)
+                          <li class="clearfix">
+                              <div class="utf_post_block_style post-float clearfix">
+                              <div class="utf_post_thumb"> <a href="{{ route('news-details', $newsSix->slug) }}"> <img class="img-fluid" src="{{ asset($newsSix->image) }}" alt="" /> </a> </div>                    
+                              <div class="utf_post_content">
+                                  <h2 class="utf_post_title title-small"> <a href="{{ route('news-details', $newsSix->slug) }}">{!! truncate($newsSix->title) !!}</a> </h2>
+                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $newsSix->slug) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->create_at)) }}</span> </div>
+                              </div>
+                              </div>
+                          </li>
+                      @endif
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+          </div>        
+      </div>
+    </div>
+  </section>

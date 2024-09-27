@@ -5,17 +5,21 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="">
-    <meta name="theme-color" content="#ec0000">
-    <meta name="description" content="News Magazine HTML Template">
-    <meta name="keywords"
-        content="Article, Blog, Business, Fashion, Magazine, Music, News, News Magazine, Newspaper, Politics, Travel">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>:: Altroz - News Magazine HTML Template ::</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <!--Favicon-->
-    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <title>@hasSection('title') @yield('title') @else {{ $settings['site_seo_title'] }} @endif </title>
+    <meta name="description" content="@hasSection('meta_description') @yield('meta_description') @else {{ $settings['site_seo_description'] }} @endif " />
+    <meta name="keywords" content="{{ $settings['site_seo_keywords'] }}" />
+
+    <meta name="og:title" content="@yield('meta_og_title')" />
+    <meta name="og:description" content="@yield('meta_og_description')" />
+    <meta name="og:image" content="@hasSection('meta_og_image') @yield('meta_og_image') @else {{ asset($settings['site_logo']) }} @endif" />
+    <meta name="twitter:title" content="@yield('meta_tw_title')" />
+    <meta name="twitter:description" content="@yield('meta_tw_description')" />
+    <meta name="twitter:image" content="@yield('meta_tw_image')" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ asset($settings['site_favicon']) }}" type="image/png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">

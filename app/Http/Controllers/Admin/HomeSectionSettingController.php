@@ -23,7 +23,7 @@ class HomeSectionSettingController extends Controller
     }
 
     public function update(AdminHomeSectionSettingUpdateRequest $request)
-    {
+    { 
         HomeSectionSetting::updateOrCreate(
             ['language' => $request->language],
             [
@@ -31,6 +31,8 @@ class HomeSectionSettingController extends Controller
                 'category_section_two' => $request->category_section_two,
                 'category_section_three' => $request->category_section_three,
                 'category_section_four' => $request->category_section_four,
+                'category_section_five' => $request->category_section_five,
+                'category_section_six' => $request->category_section_six,
             ]
         );
 

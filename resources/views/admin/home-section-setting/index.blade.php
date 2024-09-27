@@ -82,6 +82,26 @@
                                         </select>
 
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">{{ __('admin.Category Section Five') }}</label>
+                                        <select name="category_section_five" id="" class="form-control select2">
+                                            <option value="">---{{ __('admin.Select') }}---</option>
+                                            @foreach ($categories as $category)
+                                                <option {{ @$homeSectionSetting->category_section_five == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">{{ __('admin.Category Section Six') }}</label>
+                                        <select name="category_section_six" id="" class="form-control select2">
+                                            <option value="">---{{ __('admin.Select') }}---</option>
+                                            @foreach ($categories as $category)
+                                                <option {{ @$homeSectionSetting->category_section_six == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
                                     <button type="submit" class="btn btn-primary">{{ __('admin.Save') }}</button>
                                 </form>
                             </div>
