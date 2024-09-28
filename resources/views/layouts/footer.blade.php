@@ -21,7 +21,7 @@
           <div class="col-lg-4 col-sm-12 col-xs-12 footer-widget widget-categories">
             <h3 class="widget-title"> {{ @$footerGridOneTitle->value }}</h3>
             <ul>
-                @foreach ($footerGridOne as $gridOne)
+                @foreach (@$footerGridOne as $gridOne)
                     <li>
                         <i class="fa fa-angle-double-right"></i>
                         <a href="{{ $gridOne->url }}">{{ $gridOne->name }}</a>
@@ -34,7 +34,7 @@
             <h3 class="widget-title">{{ @$footerGridTwoTitle->value }}</h3>
             <div class="utf_list_post_block">
               <ul class="utf_list_post">
-                @foreach ($footerGridTwo as $gridTwo)
+                @foreach (@$footerGridTwo as $gridTwo)
                     <li>
                         <a href="{{ $gridTwo->url }}">{{ $gridTwo->name }}</a>
                     </li>

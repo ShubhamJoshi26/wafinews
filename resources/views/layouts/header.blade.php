@@ -48,7 +48,7 @@
                         <div class="logo"> <a href="/"> <img src="{{ asset($settings['site_logo']) }}" alt="" width="160px"> </a>
                         </div>
                     </div>
-                    @if ($ad->home_top_bar_ad_status == 1)
+                    @if (count($ad)>0 && $ad->home_top_bar_ad_status == 1)
                         <div class="col-md-9 col-sm-12 header-right">
                             <div class="ad-banner float-right"> <a href="{{ $ad->home_top_bar_ad_url }}"><img
                                 src="{{ $ad->home_top_bar_ad }}" class="img-fluid" alt=""></a>
@@ -76,38 +76,41 @@
                                     <li class="nav-item dropdown active"> <a href="/" class="nav-link"
                                             data-toggle="dropdown">Home</a>
                                     </li>
-                                    <li> <a href="category-style2.html">Technology</a> </li>
+                                    @if(count($brands)>0)
                                     <li class="dropdown nav-item utf_mega_dropdown"> <a href="#"
-                                            class="nav-link dropdown-toggler" data-toggle="dropdown">Brands <i
-                                                class="fa fa-angle-down"></i></a>
-                                        <div class="utf_dropdown_menu utf_mega_menu_content clearfix">
-                                            <div class="utf_mega_menu_content_inner">
-                                                <div class="row">
-                                                    @foreach ($brands as $brand)
-                                                    <div class="col-md-3">
-                                                        <div class="utf_post_block_style clearfix">
-                                                            <div class="utf_post_thumb"> <img class="img-fluid"
-                                                                    src="{{$brand->image}}"
-                                                                    alt="" /> 
-                                                            </div>
-                                                            <div class="utf_post_content">
-                                                                <h2 class="utf_post_title title-small"> <a
-                                                                        href="#">{{$brand->name}}</a> </h2>
-                                                            </div>
+                                        class="nav-link dropdown-toggler" data-toggle="dropdown">Brands <i
+                                            class="fa fa-angle-down"></i></a>
+                                    <div class="utf_dropdown_menu utf_mega_menu_content clearfix">
+                                        <div class="utf_mega_menu_content_inner">
+                                            <div class="row">
+                                                @foreach ($brands as $brand)
+                                                <div class="col-md-3">
+                                                    <div class="utf_post_block_style clearfix">
+                                                        <div class="utf_post_thumb"> <img class="img-fluid"
+                                                                src="{{$brand->image}}"
+                                                                alt="" /> 
+                                                        </div>
+                                                        <div class="utf_post_content">
+                                                            <h2 class="utf_post_title title-small"> <a
+                                                                    href="#">{{$brand->name}}</a> </h2>
                                                         </div>
                                                     </div>
-                                                    @endforeach
                                                 </div>
+                                                @endforeach
                                             </div>
                                         </div>
-                                    </li>
+                                    </div>
+                                </li>
+                                    @endif
                                     <li> <a href="about.html">About Us</a> </li>
+                                    @if(count($FeaturedCategories)>0)
                                     @foreach ($FeaturedCategories as $category)
-                                        <li>
-                                            <a href="{{ route('news', ['category' => $category->slug]) }}">{{ $category->name }}</a>
-                                        </li>
+                                    <li>
+                                        <a href="{{ route('news', ['category' => $category->slug]) }}">{{ $category->name }}</a>
+                                    </li>
 
-                                    @endforeach
+                                @endforeach
+                                    @endif
                                 </ul>
                             </div>
                         </div>
