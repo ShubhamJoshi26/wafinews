@@ -6,10 +6,8 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">{{ __('admin.Stisla') }}</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">{{ __('admin.St') }}</a>
+            <img src="{{ asset($settings['site_logo']) }}" width="50px" alt="">
+            <a href="">{{ __('Wafi News') }}</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">{{ __('admin.Dashboard') }}</li>
@@ -22,6 +20,11 @@
                 <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
                         href="{{ route('admin.category.index') }}"><i class="fas fa-list"></i>
                         <span>{{ __('admin.Category') }}</span></a></li>
+            @endif
+            @if (canAccess(['brand index', 'brand create', 'brand udpate', 'brand delete']))
+                <li class="{{ setSidebarActive(['admin.brand.*']) }}"><a class="nav-link"
+                        href="{{ route('admin.brand.index') }}"><i class="fas fa-list"></i>
+                        <span>{{ __('Brand') }}</span></a></li>
             @endif
 
             @if (canAccess(['news index']))
