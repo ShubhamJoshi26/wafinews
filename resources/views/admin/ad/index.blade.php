@@ -34,7 +34,7 @@
 
                         <label class="custom-switch mt-2">
                             <input
-                                {{ $ad->home_top_bar_ad_status == 1 ? 'checked' : '' }}
+                                {{ $ad->home_top_bar_ad_status??'0' == 1 ? 'checked' : '' }}
                                 name="home_top_bar_ad_status"
                                 value="1" type="checkbox" class="custom-switch-input toggle-status">
                             <span class="custom-switch-indicator"></span>
@@ -58,7 +58,7 @@
 
                         <label class="custom-switch mt-2">
                             <input
-                                {{ $ad->home_middle_ad_status == 1 ? 'checked' : '' }}
+                                {{ $ad->home_middle_ad_status??'0' == 1 ? 'checked' : '' }}
                                 name="home_middle_ad_status"
                                 value="1" type="checkbox" class="custom-switch-input toggle-status">
                             <span class="custom-switch-indicator"></span>
@@ -84,7 +84,7 @@
 
                         <label class="custom-switch mt-2">
                             <input
-                                {{ $ad->view_page_ad_status == 1 ? 'checked' : '' }}
+                                {{ $ad->view_page_ad_status??'0' == 1 ? 'checked' : '' }}
                                 name="view_page_ad_status"
                                 value="1" type="checkbox" class="custom-switch-input toggle-status">
                             <span class="custom-switch-indicator"></span>
@@ -111,7 +111,7 @@
 
                         <label class="custom-switch mt-2">
                             <input
-                            {{ $ad->news_page_ad_status == 1 ? 'checked' : '' }}
+                            {{ $ad->news_page_ad_status??'0' == 1 ? 'checked' : '' }}
                                 name="news_page_ad_status"
                                 value="1" type="checkbox" class="custom-switch-input toggle-status">
                             <span class="custom-switch-indicator"></span>
@@ -137,7 +137,7 @@
 
                         <label class="custom-switch mt-2">
                             <input
-                                {{ $ad->side_bar_ad_status == 1 ? 'checked' : '' }}
+                                {{ $ad->side_bar_ad_status??'0' == 1 ? 'checked' : '' }}
                                 name="side_bar_ad_status"
                                 value="1" type="checkbox" class="custom-switch-input toggle-status">
                             <span class="custom-switch-indicator"></span>
