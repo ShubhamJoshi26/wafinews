@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\RoleUserController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialCountController;
 use App\Http\Controllers\Admin\SocialLinkController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Models\FooterGridOne;
 use App\Models\Setting;
@@ -60,12 +61,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
     //**Brands Route */
     Route::resource('brand', BrandController::class);
 
+    // Sub Category Routes
+    Route::resource('subcategory',SubCategoryController::class);
     /** News Route */
     Route::get('fetch-news-category', [NewsController::class, 'fetchCategory'])->name('fetch-news-category');
     Route::get('toggle-news-status', [NewsController::class, 'toggleNewsStatus'])->name('toggle-news-status');
     Route::get('news-copy/{id}', [NewsController::class, 'copyNews'])->name('news-copy');
     Route::get('pending-news', [NewsController::class, 'pendingNews'])->name('pending.news');
     Route::put('approve-news', [NewsController::class, 'approveNews'])->name('approve.news');
+    Route::get('/news/sub-category-by-category/{category_id}',[CategoryController::class,'getSubCategorybyCategoryId']);
 
     Route::resource('news', NewsController::class);
 

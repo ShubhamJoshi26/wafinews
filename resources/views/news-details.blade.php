@@ -68,14 +68,14 @@
           <nav class="post-navigation clearfix">
             <div class="post-previous"> 
                 @if ($previousPost)
-                    <a href="{{ route('news-details', $previousPost->slug) }}"> <span><i class="fa fa-angle-left"></i>Previous Post</span>
+                    <a href="{{ route('news-details',[$previousPost->category->name,$previousPost->subCategory->name, $previousPost->slug]) }}"> <span><i class="fa fa-angle-left"></i>Previous Post</span>
                         <h3>{!! truncate($previousPost->title) !!}</h3>
                     </a> 
                 @endif
 			</div>
             <div class="post-next"> 
                 @if ($nextPost)
-                    <a href="{{ route('news-details', $nextPost->slug) }}"> <span>Next Post <i class="fa fa-angle-right"></i></span>
+                    <a href="{{ route('news-details',[$nextPost->category->name,$nextPost->subCategory->name, $nextPost->slug]) }}"> <span>Next Post <i class="fa fa-angle-right"></i></span>
                         <h3> {!! truncate($nextPost->title) !!}</h3>
                     </a>
                 @endif 
@@ -96,10 +96,10 @@
                 @foreach ($relatedPosts as $post)
                     <div class="item">
                         <div class="utf_post_block_style clearfix">
-                        <div class="utf_post_thumb"> <a href="{{ route('news-details', $post->slug) }}"><img class="img-fluid" src="{{ asset($post->image) }}" alt="" /></a> </div>
-                        <a class="utf_post_cat" href="{{ route('news-details', $post->slug) }}"> {{ $post->auther->name }}</a>
+                        <div class="utf_post_thumb"> <a href="{{ route('news-details',[$post->category->name,$post->subCategory->name,$post->slug]) }}"><img class="img-fluid" src="{{ asset($post->image) }}" alt="" /></a> </div>
+                        <a class="utf_post_cat" href="{{ route('news-details',[$post->category->name,$post->subCategory->name,$post->slug]) }}"> {{ $post->auther->name }}</a>
                         <div class="utf_post_content">
-                            <h2 class="utf_post_title title-medium"> <a href="{{ route('news-details', $post->slug) }}">{!! truncate($post->title) !!}</a> </h2>
+                            <h2 class="utf_post_title title-medium"> <a href="{{ route('news-details',[$post->category->name,$post->subCategory->name,$post->slug]) }}">{!! truncate($post->title) !!}</a> </h2>
                             <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($post->created_at)) }}</span> </div>
                         </div>
                         </div>
@@ -211,10 +211,10 @@
                         @if($key<=4)
                             <li class="clearfix">
                                 <div class="utf_post_block_style post-float clearfix">
-                                <div class="utf_post_thumb"> <a href="{{ route('news-details', $news->slug) }}"> <img src="{{ asset($news->image) }}" alt="" /> </a> <a class="utf_post_cat" href="{{ route('news-details', $news->slug) }}"> {{ $news->category->name }}</a> </div>                      
+                                <div class="utf_post_thumb"> <a href="{{ route('news-details',[$news->category->name,$news->subCategory->name,$news->slug]) }}"> <img src="{{ asset($news->image) }}" alt="" /> </a> <a class="utf_post_cat" href="{{ route('news-details',[$news->category->name,$news->subCategory->name,$news->slug]) }}"> {{ $news->category->name }}</a> </div>                      
                                 <div class="utf_post_content">
-                                    <h2 class="utf_post_title title-small"> <a href="{{ route('news-details', $news->slug) }}">{!! truncate($news->title) !!}</a> </h2>
-                                    <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details', $news->slug) }}"> {{ $news->auther->name }}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($news->created_at)) }}</span> </div>
+                                    <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$news->category->name,$news->subCategory->name,$news->slug]) }}">{!! truncate($news->title) !!}</a> </h2>
+                                    <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$news->category->name,$news->subCategory->name,$news->slug]) }}"> {{ $news->auther->name }}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($news->created_at)) }}</span> </div>
                                 </div>
                                 </div>
                             </li>

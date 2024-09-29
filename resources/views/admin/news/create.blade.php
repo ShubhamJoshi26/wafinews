@@ -37,6 +37,15 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="">{{ __('Sub Category') }}</label>
+                        <select name="sub_category_id" id="sub_category_id" class="form-control select2">
+                            <option>--Select Sub Category--</option>
+                        </select>
+                        @error('category')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
 
                     <div class="form-group">
@@ -170,6 +179,24 @@
                     },
                     error: function(error) {
                         console.log(error);
+                    }
+                })
+            });
+            $('#category').on('change',function(){
+                var category_id = $(this).val();
+                $.ajax({
+                    url:"/admin/news/sub-category-by-category/"+category_id,
+                    type:'get',
+                    success:function(res)
+                    {
+                        if(res)
+                        {
+                            var subcategoryoption = '<option>--Select Sub Category--</option>';
+                            $.each(res,function(key,val){
+                                subcategoryoption += '<option value="'+val["id"]+'">'+val['name']+'</option>'
+                            });
+                            $('#sub_category_id').html(subcategoryoption); 
+                        }
                     }
                 })
             })

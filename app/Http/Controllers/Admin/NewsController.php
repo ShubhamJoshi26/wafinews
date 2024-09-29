@@ -8,6 +8,7 @@ use App\Http\Requests\AdminNewsUpdateRequest;
 use App\Models\Category;
 use App\Models\Language;
 use App\Models\News;
+use App\Models\SubCategory;
 use App\Models\Tag;
 use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
@@ -82,6 +83,7 @@ class NewsController extends Controller
         $news = new News();
         $news->language = $request->language;
         $news->category_id = $request->category;
+        $news->sub_category_id = $request->sub_category_id;
         $news->auther_id = Auth::guard('admin')->user()->id;
         $news->image = $imagePath;
         $news->title = $request->title;
@@ -147,8 +149,8 @@ class NewsController extends Controller
         }
 
         $categories = Category::where('language', $news->language)->get();
-
-        return view('admin.news.edit', compact('languages', 'news', 'categories'));
+        $subcategory = SubCategory::where('category_id',$news->category_id)->get();
+        return view('admin.news.edit', compact('languages', 'news', 'categories','subcategory'));
     }
 
     /**
@@ -168,6 +170,7 @@ class NewsController extends Controller
 
         $news->language = $request->language;
         $news->category_id = $request->category;
+        $news->sub_category_id = $request->sub_category_id;
         $news->image = !empty($imagePath) ? $imagePath : $news->image;
         $news->title = $request->title;
         $news->slug = \Str::slug($request->title);
@@ -178,6 +181,7 @@ class NewsController extends Controller
         $news->show_at_slider = $request->show_at_slider == 1 ? 1 : 0;
         $news->show_at_popular = $request->show_at_popular == 1 ? 1 : 0;
         $news->status = $request->status == 1 ? 1 : 0;
+        
         $news->save();
 
         $tags = explode(',', $request->tags);

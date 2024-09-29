@@ -45,4 +45,9 @@ class News extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function subCategory()
+    {
+        return $this->belongsTo(SubCategory::class,'sub_category_id','id');
+    }
 }

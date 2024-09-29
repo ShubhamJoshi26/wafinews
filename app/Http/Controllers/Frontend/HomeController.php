@@ -26,17 +26,16 @@ class HomeController extends Controller
     public function index()
     {
         $breakingNews = News::where(['is_breaking_news' => 1,])
-            ->activeEntries()->withLocalize()->orderBy('id', 'DESC')->take(10)->get();
-        $heroSlider = News::with(['category', 'auther'])
+            ->activeEntries()->withLocalize()->with('subCategory','category')->orderBy('id', 'DESC')->take(10)->get();
+        $heroSlider = News::with(['category', 'auther','subCategory'])
             ->where('show_at_slider', 1)
             ->activeEntries()
             ->withLocalize()
             ->orderBy('id', 'DESC')->take(7)
             ->get();
-
-        $recentNews = News::with(['category', 'auther'])->activeEntries()->withLocalize()
+        $recentNews = News::with(['category', 'auther','subCategory'])->activeEntries()->withLocalize()
             ->orderBy('id', 'DESC')->take(6)->get();
-        $popularNews = News::with(['category'])->where('show_at_popular', 1)
+        $popularNews = News::with(['category','subCategory'])->where('show_at_popular', 1)
             ->activeEntries()->withLocalize()
             ->orderBy('updated_at', 'DESC')->take(4)->get();
 
@@ -44,36 +43,36 @@ class HomeController extends Controller
 
         if ($HomeSectionSetting) {
             $categorySectionOne = News::where('category_id', $HomeSectionSetting->category_section_one)
-                ->activeEntries()->withLocalize()->with('category','auther')
+                ->activeEntries()->withLocalize()->with('category','auther','subCategory')
                 ->orderBy('id', 'DESC')
                 ->take(8)
                 ->get();
 
             $categorySectionTwo = News::where('category_id', $HomeSectionSetting->category_section_two)
-                ->activeEntries()->withLocalize()
+                ->activeEntries()->withLocalize()->with('subCategory','category')
                 ->orderBy('id', 'DESC')
                 ->take(8)
                 ->get();
 
             $categorySectionThree = News::where('category_id', $HomeSectionSetting->category_section_three)
-                ->activeEntries()->withLocalize()
+                ->activeEntries()->withLocalize()->with('subCategory','category')
                 ->orderBy('id', 'DESC')
                 ->take(6)
                 ->get();
 
             $categorySectionFour = News::where('category_id', $HomeSectionSetting->category_section_four)
-                ->activeEntries()->withLocalize()
+                ->activeEntries()->withLocalize()->with('subCategory','category')
                 ->orderBy('id', 'DESC')
                 ->take(4)
                 ->get();
             
             $categorySectionFive = News::where('category_id', $HomeSectionSetting->category_section_five)
-                ->activeEntries()->withLocalize()
+                ->activeEntries()->withLocalize()->with('subCategory','category')
                 ->orderBy('id', 'DESC')
                 ->take(4)
                 ->get();
             $categorySectionSix = News::where('category_id', $HomeSectionSetting->category_section_six)
-                ->activeEntries()->withLocalize()
+                ->activeEntries()->withLocalize()->with('subCategory','category')
                 ->orderBy('id', 'DESC')
                 ->take(4)
                 ->get();
@@ -87,7 +86,7 @@ class HomeController extends Controller
         }
 
 
-        $mostViewedPosts = News::activeEntries()->withLocalize()
+        $mostViewedPosts = News::activeEntries()->withLocalize()->with('subCategory','category')
             ->orderBy('views', 'DESC')
             ->take(3)
             ->get();
@@ -99,7 +98,7 @@ class HomeController extends Controller
         $ad = Ad::first();
 
         $socialLinks = SocialLink::where('status',1)->get();
-
+        
         return view('home', compact(
             'breakingNews',
             'heroSlider',
@@ -119,32 +118,30 @@ class HomeController extends Controller
         ));
     }
 
-    public function ShowNews(string $slug)
+    public function ShowNews(string $category_id,string $subcategoryid,string $slug)
     {
-
-
-        $news = News::with(['auther', 'tags', 'comments'])->where('slug', $slug)
+        $news = News::with(['auther', 'tags', 'comments','subCategory','category'])->where('slug', $slug)
             ->activeEntries()->withLocalize()
             ->first();
 
         $this->countView($news);
 
-        $recentNews = News::with(['category', 'auther'])->where('slug', '!=', $news->slug)
+        $recentNews = News::with(['category', 'auther','subCategory','category'])->where('slug', '!=', $news->slug)
             ->activeEntries()->withLocalize()->orderBy('id', 'DESC')->take(4)->get();
 
         $mostCommonTags = $this->mostCommonTags();
 
         $nextPost = News::where('id', '>', $news->id)
             ->activeEntries()
-            ->withLocalize()
+            ->withLocalize()->with('subCategory','category')
             ->orderBy('id', 'asc')->first();
 
         $previousPost = News::where('id', '<', $news->id)
             ->activeEntries()
-            ->withLocalize()
+            ->withLocalize()->with('subCategory','category')
             ->orderBy('id', 'desc')->first();
 
-        $relatedPosts = News::where('slug', '!=', $news->slug)
+        $relatedPosts = News::where('slug', '!=', $news->slug)->with('subCategory','category')
             ->where('category_id', $news->category_id)
             ->activeEntries()
             ->withLocalize()

@@ -8,6 +8,7 @@ use App\Http\Requests\AdminCategoryUpdateRequest;
 use App\Models\Category;
 use App\Models\Language;
 use App\Models\News;
+use App\Models\SubCategory;
 use Faker\Provider\ar_EG\Company;
 use Illuminate\Http\Request;
 
@@ -111,5 +112,10 @@ class CategoryController extends Controller
        } catch (\Throwable $th) {
             return response(['status' => 'error', 'message' => __('admin.Someting went wrong!')]);
        }
+    }
+    public function getSubCategorybyCategoryId($categoryId)
+    {
+        $subCategory = SubCategory::where('category_id',$categoryId)->get();
+        return $subCategory;
     }
 }

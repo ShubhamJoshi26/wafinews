@@ -43,6 +43,19 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="">{{ __('Sub Category') }}</label>
+                        <select name="sub_category_id" id="sub_category_id" class="form-control select2">
+                            <option>--Select Sub Category--</option>
+                            @foreach ($subcategory as $subcat)
+                                <option {{ $subcat->id === $news->sub_category_id ? 'selected' : '' }} value="{{ $subcat->id }}">{{ $subcat->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('category')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Image') }}</label>

@@ -3,14 +3,14 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Sub') }}</h1>
+            <h1>{{ __('Sub Category') }}</h1>
         </div>
 
         <div class="card card-primary">
             <div class="card-header">
-                <h4>{{ __('All Sub') }}</h4>
+                <h4>{{ __('All Sub Category') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('admin.brand.create') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.subcategory.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -20,7 +20,8 @@
 
 
                 @php
-                    $brands = \App\Models\Brand::orderByDesc('id')->get();
+                    $subcategories = \App\Models\SubCategory::with('category')->orderByDesc('id')->get();
+                    // dd($subcategories->toArray());
                 @endphp
                 <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab2">
                     <div class="card-body">
@@ -31,29 +32,20 @@
                                         <th class="text-center">
                                             #
                                         </th>
-                                        <th>{{ __('Image') }}</th>
                                         <th>{{ __('admin.Name') }}</th>
-                                        <th>{{ __('admin.In Nav') }}</th>
+                                        <th>{{ __('Category Name') }}</th>
                                         <th>{{ __('admin.Status') }}</th>
                                         <th>{{ __('admin.Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($brands as $brand)
+                                    @foreach ($subcategories as $category)
                                         <tr>
-                                            <td>{{ $brand->id }}</td>
-                                            <td><img src="{{ asset($brand->image) }}" alt="" width="100px"></td>
-                                            <td>{{ $brand->name }}</td>
+                                            <td>{{ $category->id }}</td>
+                                            <td>{{ $category->name }}</td>
+                                            <td>{{$category->category->name}}</td>
                                             <td>
-                                                @if ($brand->show_at_nav == 1)
-                                                    <span class="badge badge-primary">{{ __('admin.Yes') }}</span>
-                                                @else
-                                                    <span class="badge badge-danger">{{ __('admin.No') }}</span>
-                                                @endif
-
-                                            </td>
-                                            <td>
-                                                @if ($brand->is_active == 1)
+                                                @if ($category->is_active == 1)
                                                     <span class="badge badge-success">{{ __('admin.Yes') }}</span>
                                                 @else
                                                     <span class="badge badge-danger">{{ __('admin.No') }}</span>
@@ -63,9 +55,9 @@
 
 
                                             <td>
-                                                <a href="{{ route('admin.brand.edit', $brand->id) }}"
+                                                <a href="{{ route('admin.subcategory.edit', $category->id) }}"
                                                     class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="{{ route('admin.brand.destroy', $brand->id) }}"
+                                                <a href="{{ route('admin.subcategory.destroy', $category->id) }}"
                                                     class="btn btn-danger delete-item"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>

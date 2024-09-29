@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('home_section_settings', function (Blueprint $table) {
-        //     $table->string('category_section_five');
-        //     $table->string('category_section_six');
-        // });
+        Schema::table('news', function (Blueprint $table) {
+            $table->unsignedBigInteger('sub_category_id');
+            $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onDelete('restrict');
+        });
     }
 
     /**
@@ -22,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('home_section_settings', function (Blueprint $table) {
-            //
+        Schema::table('news', function (Blueprint $table) {
+            $table->dropColumn('sub_category_id');
         });
     }
 };

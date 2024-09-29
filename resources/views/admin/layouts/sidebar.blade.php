@@ -21,6 +21,11 @@
                         href="{{ route('admin.category.index') }}"><i class="fas fa-list"></i>
                         <span>{{ __('admin.Category') }}</span></a></li>
             @endif
+            @if (canAccess(['sub-category index', 'sub-category create', 'sub-category udpate', 'sub-category delete']))
+                <li class="{{ setSidebarActive(['admin.subcategory.*']) }}"><a class="nav-link"
+                        href="{{ route('admin.subcategory.index') }}"><i class="fas fa-list"></i>
+                        <span>{{ __('Sub Category') }}</span></a></li>
+            @endif
             @if (canAccess(['brand index', 'brand create', 'brand udpate', 'brand delete']))
                 <li class="{{ setSidebarActive(['admin.brand.*']) }}"><a class="nav-link"
                         href="{{ route('admin.brand.index') }}"><i class="fas fa-list"></i>
