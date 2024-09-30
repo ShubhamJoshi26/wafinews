@@ -198,13 +198,13 @@
                 <div class="sidebar utf_sidebar_right">
                     <div class="widget">
                         <h3 class="utf_block_title"><span>Follow Us</span></h3>
-                        <ul class="social-icon">
+                        <ul class="unstyled utf_footer_social">
                             @foreach ($socialLinks as $link)
-                                <a title="Facebook" href="{{ $link->url }}">
-                                    <span class="social-icon">
-                                        <i class="{{ $link->icon }}"></i>
-                                    </span>
+                            <li>
+                                <a href="{{ $link->url }}">
+                                    <i class="{{ $link->icon }}"></i>
                                 </a>
+                            </li>
                             @endforeach
                         </ul>
                     </div>
