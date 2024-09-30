@@ -30,7 +30,7 @@ use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin', 'as' => 'admin'], function(){
 
     Route::get('login', [AdminAuthenticationController::class, 'login'])->name('login');
     Route::post('login', [AdminAuthenticationController::class, 'handleLogin'])->name('handle-login');
