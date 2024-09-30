@@ -34,7 +34,7 @@ Route::get('language', LanguageController::class)->name('language');
 
 /** News Details Routes */
 // Route::get('news-details/{slug}', [HomeController::class, 'ShowNews'])->name('news-details');
-Route::get('news/{category_id}/{sub_category_id}/{slug}', [HomeController::class, 'ShowNews'])->name('news-details');
+Route::get('{category_id}/{sub_category_id}/{slug}', [HomeController::class, 'ShowNews'])->name('news-details');
 
 /** News Details Routes */
 Route::get('news', [HomeController::class, 'news'])->name('news');
