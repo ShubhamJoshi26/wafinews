@@ -177,6 +177,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
             'Fruitcake\\Cors\\' => 15,
             'Fidry\\CpuCoreCounter\\' => 21,
             'Faker\\' => 6,
+            'Facade\\IgnitionContracts\\' => 25,
         ),
         'E' => 
         array (
@@ -191,6 +192,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
             'Dflydev\\DotAccessData\\' => 22,
             'DeepCopy\\' => 9,
             'DebugBar\\' => 9,
+            'DaveJamesMiller\\Breadcrumbs\\' => 28,
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
         ),
@@ -360,13 +362,13 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
-            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
+            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
+            1 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/ignition/src',
-            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
+            1 => __DIR__ . '/..' . '/spatie/ignition/src',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -563,6 +565,10 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
+        'Facade\\IgnitionContracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facade/ignition-contracts/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -594,6 +600,10 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'DebugBar\\' => 
         array (
             0 => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar',
+        ),
+        'DaveJamesMiller\\Breadcrumbs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src',
         ),
         'Database\\Seeders\\' => 
         array (
@@ -638,6 +648,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'App\\Http\\Controllers\\Admin\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AboutController.php',
         'App\\Http\\Controllers\\Admin\\AdController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdController.php',
         'App\\Http\\Controllers\\Admin\\AdminAuthenticationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminAuthenticationController.php',
+        'App\\Http\\Controllers\\Admin\\BrandController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BrandController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
         'App\\Http\\Controllers\\Admin\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContactController.php',
         'App\\Http\\Controllers\\Admin\\ContactMessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContactMessageController.php',
@@ -656,6 +667,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'App\\Http\\Controllers\\Admin\\SettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SettingController.php',
         'App\\Http\\Controllers\\Admin\\SocialCountController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SocialCountController.php',
         'App\\Http\\Controllers\\Admin\\SocialLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SocialLinkController.php',
+        'App\\Http\\Controllers\\Admin\\SubCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SubCategoryController.php',
         'App\\Http\\Controllers\\Admin\\SubscriberController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SubscriberController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
@@ -713,6 +725,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'App\\Models\\About' => __DIR__ . '/../..' . '/app/Models/About.php',
         'App\\Models\\Ad' => __DIR__ . '/../..' . '/app/Models/Ad.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
+        'App\\Models\\Brand' => __DIR__ . '/../..' . '/app/Models/Brand.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
@@ -728,6 +741,7 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'App\\Models\\Setting' => __DIR__ . '/../..' . '/app/Models/Setting.php',
         'App\\Models\\SocialCount' => __DIR__ . '/../..' . '/app/Models/SocialCount.php',
         'App\\Models\\SocialLink' => __DIR__ . '/../..' . '/app/Models/SocialLink.php',
+        'App\\Models\\SubCategory' => __DIR__ . '/../..' . '/app/Models/SubCategory.php',
         'App\\Models\\Subscriber' => __DIR__ . '/../..' . '/app/Models/Subscriber.php',
         'App\\Models\\Tag' => __DIR__ . '/../..' . '/app/Models/Tag.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -912,6 +926,15 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'DateMalformedStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedStringException.php',
         'DateObjectError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateObjectError.php',
         'DateRangeError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateRangeError.php',
+        'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsException' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/BreadcrumbsException.php',
+        'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsGenerator' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/BreadcrumbsGenerator.php',
+        'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsManager' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/BreadcrumbsManager.php',
+        'DaveJamesMiller\\Breadcrumbs\\BreadcrumbsServiceProvider' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/BreadcrumbsServiceProvider.php',
+        'DaveJamesMiller\\Breadcrumbs\\Exceptions\\DuplicateBreadcrumbException' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/Exceptions/DuplicateBreadcrumbException.php',
+        'DaveJamesMiller\\Breadcrumbs\\Exceptions\\InvalidBreadcrumbException' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/Exceptions/InvalidBreadcrumbException.php',
+        'DaveJamesMiller\\Breadcrumbs\\Exceptions\\UnnamedRouteException' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/Exceptions/UnnamedRouteException.php',
+        'DaveJamesMiller\\Breadcrumbs\\Exceptions\\ViewNotSetException' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/Exceptions/ViewNotSetException.php',
+        'DaveJamesMiller\\Breadcrumbs\\Facades\\Breadcrumbs' => __DIR__ . '/..' . '/davejamesmiller/laravel-breadcrumbs/src/Facades/Breadcrumbs.php',
         'DebugBar\\Bridge\\CacheCacheCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php',
         'DebugBar\\Bridge\\DoctrineCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php',
         'DebugBar\\Bridge\\MonologCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php',
@@ -1175,6 +1198,12 @@ class ComposerStaticInit3cc7868ff3750329a850b051ef06f39a
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'Facade\\IgnitionContracts\\BaseSolution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/BaseSolution.php',
+        'Facade\\IgnitionContracts\\HasSolutionsForThrowable' => __DIR__ . '/..' . '/facade/ignition-contracts/src/HasSolutionsForThrowable.php',
+        'Facade\\IgnitionContracts\\ProvidesSolution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/ProvidesSolution.php',
+        'Facade\\IgnitionContracts\\RunnableSolution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/RunnableSolution.php',
+        'Facade\\IgnitionContracts\\Solution' => __DIR__ . '/..' . '/facade/ignition-contracts/src/Solution.php',
+        'Facade\\IgnitionContracts\\SolutionProviderRepository' => __DIR__ . '/..' . '/facade/ignition-contracts/src/SolutionProviderRepository.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Inn.php',

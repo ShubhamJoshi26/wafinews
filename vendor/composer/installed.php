@@ -58,6 +58,15 @@
                 0 => '*',
             ),
         ),
+        'davejamesmiller/laravel-breadcrumbs' => array(
+            'pretty_version' => '5.3.2',
+            'version' => '5.3.2.0',
+            'reference' => '99f92a706faefb5e1816caa96e877a0184509e5b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../davejamesmiller/laravel-breadcrumbs',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v3.0.3',
             'version' => '3.0.3.0',
@@ -109,6 +118,15 @@
             'reference' => 'ebaaf5be6c0286928352e054f2d5125608e5405e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../egulias/email-validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'facade/ignition-contracts' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../facade/ignition-contracts',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -898,8 +916,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

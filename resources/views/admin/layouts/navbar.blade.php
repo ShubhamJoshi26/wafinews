@@ -9,7 +9,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
 
-                <a href="{{ route('auth/admin.profile.index') }}" class="dropdown-item has-icon">
+                <a href="{{ route('/news/auth/admin/profile.index') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> {{ __('admin.Profile') }}
                 </a>
 

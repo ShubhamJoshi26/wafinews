@@ -1,6 +1,6 @@
 <div class="card border border-primary">
     <div class="card-body">
-        <form action="{{ route('auth/admin.seo-setting.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('/news/auth/admin/seo-setting.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

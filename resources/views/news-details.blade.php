@@ -16,8 +16,7 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="breadcrumb">
-            <li><a href="{{ url('/') }}" class="breadcrumbs__url">
-                <i class="fa fa-home"></i> {{ __('Home') }}</a></li>
+            <li><a href="{{ url('/') }}" class="breadcrumbs__url"><i class="fa fa-home"></i> {{ __('Home') }}</a></li>
             <li><a href="javascript:;" class="breadcrumbs__url">{{ __('News') }}</a></li>
           </ul>
         </div>

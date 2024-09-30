@@ -13,7 +13,7 @@
             </div>
 
             <div class="card-body">
-                <form action="{{ route('auth/admin.subscribers.store') }}" method="POST">
+                <form action="{{ route('/news/auth/admin/subscribers.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">{{ __('admin.Subject') }}</label>
@@ -43,7 +43,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All Subscribers') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth/admin.category.create') }}" class="btn btn-primary">
+                    <a href="{{ route('/news/auth/admin/category.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -70,7 +70,7 @@
 
 
                                     <td>
-                                        <a href="{{ route('auth/admin.subscribers.destroy', $sub->id) }}"
+                                        <a href="{{ route('/news/auth/admin/subscribers.destroy', $sub->id) }}"
                                             class="btn btn-danger delete-item"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>

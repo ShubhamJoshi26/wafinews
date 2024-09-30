@@ -33,7 +33,7 @@
                         <div class="tab-pane fade show {{ $loop->index === 0 ? 'active' : '' }}"
                             id="home-{{ $language->lang }}" role="tabpanel" aria-labelledby="home-tab2">
                             <div class="card-body">
-                                <form action="{{ route('auth/admin.footer-info.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('/news/auth/admin/footer-info.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group">

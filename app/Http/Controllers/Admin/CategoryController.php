@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
         toast(__('admin.Created Successfully'),'success')->width('350');
 
-        return redirect()->route('auth/admin.category.index');
+        return redirect()->route('/news/auth/admin/category.index');
     }
 
     /**
@@ -92,7 +92,7 @@ class CategoryController extends Controller
 
         toast(__('admin.Update Successfully'),'success')->width('350');
 
-        return redirect()->route('auth/admin.category.index');
+        return redirect()->route('/news/auth/admin/category.index');
     }
 
     /**

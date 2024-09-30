@@ -28,7 +28,7 @@
                         <div class="tab-pane fade show {{ $loop->index === 0 ? 'active' : '' }}"
                             id="home-{{ $language->lang }}" role="tabpanel" aria-labelledby="home-tab2">
                             <div class="card-body">
-                                <form action="{{ route('auth/admin.footer-grid-two-title') }}" method="POST">
+                                <form action="{{ route('/news/auth/admin/footer-grid-two-title') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="">{{ __('admin.Footer Title') }}</label>
@@ -57,7 +57,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All Footer grid two links') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth/admin.footer-grid-two.create') }}" class="btn btn-primary">
+                    <a href="{{ route('/news/auth/admin/footer-grid-two.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -111,9 +111,9 @@
                                                     </td>
 
                                                     <td>
-                                                        <a href="{{ route('auth/admin.footer-grid-two.edit', $item->id) }}" class="btn btn-primary"><i
+                                                        <a href="{{ route('/news/auth/admin/footer-grid-two.edit', $item->id) }}" class="btn btn-primary"><i
                                                                 class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('auth/admin.footer-grid-two.destroy', $item->id) }}" class="btn btn-danger delete-item"><i
+                                                        <a href="{{ route('/news/auth/admin/footer-grid-two.destroy', $item->id) }}" class="btn btn-danger delete-item"><i
                                                                 class="fas fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>

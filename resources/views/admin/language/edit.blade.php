@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth/admin.language.update', $language->id) }}" method="POST">
+                <form action="{{ route('/news/auth/admin/language.update', $language->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

@@ -64,7 +64,7 @@ class RoleUserController extends Controller
 
             toast(__('admin.Created Successfully!'), 'success');
 
-            return redirect()->route('auth/admin.role-users.index');
+            return redirect()->route('/news/auth/admin/role-users.index');
 
         } catch (\Throwable $th) {
             throw $th;
@@ -111,7 +111,7 @@ class RoleUserController extends Controller
 
         toast(__('admin.Update Successfully!'), 'success');
 
-        return redirect()->route('auth/admin.role-users.index');
+        return redirect()->route('/news/auth/admin/role-users.index');
     }
 
     /**

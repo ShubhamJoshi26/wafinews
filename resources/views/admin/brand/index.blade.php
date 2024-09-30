@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('All Sub') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth/admin.brand.create') }}" class="btn btn-primary">
+                    <a href="{{ route('/news/auth/admin/brand.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -63,9 +63,9 @@
 
 
                                             <td>
-                                                <a href="{{ route('auth/admin.brand.edit', $brand->id) }}"
+                                                <a href="{{ route('/news/auth/admin/brand.edit', $brand->id) }}"
                                                     class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="{{ route('auth/admin.brand.destroy', $brand->id) }}"
+                                                <a href="{{ route('/news/auth/admin/brand.destroy', $brand->id) }}"
                                                     class="btn btn-danger delete-item"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>

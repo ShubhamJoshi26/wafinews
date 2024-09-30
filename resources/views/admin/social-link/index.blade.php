@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All link') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth/admin.social-link.create') }}" class="btn btn-primary">
+                    <a href="{{ route('/news/auth/admin/social-link.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -48,9 +48,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('auth/admin.social-link.edit', $link->id) }}"
+                                    <a href="{{ route('/news/auth/admin/social-link.edit', $link->id) }}"
                                         class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                    <a href="{{ route('auth/admin.social-link.destroy', $link->id) }}"
+                                    <a href="{{ route('/news/auth/admin/social-link.destroy', $link->id) }}"
                                         class="btn btn-danger delete-item"><i
                                             class="fas fa-trash-alt"></i></a>
 

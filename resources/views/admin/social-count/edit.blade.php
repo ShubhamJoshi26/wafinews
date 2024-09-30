@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth/admin.social-count.update', $socialCount->id) }}" method="POST">
+                <form action="{{ route('/news/auth/admin/social-count.update', $socialCount->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

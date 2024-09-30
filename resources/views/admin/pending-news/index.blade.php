@@ -65,12 +65,12 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{ route('auth/admin.news.edit', $item->id) }}"
+                                        <a href="{{ route('/news/auth/admin/news.edit', $item->id) }}"
                                             class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('auth/admin.news.destroy', $item->id) }}"
+                                        <a href="{{ route('/news/auth/admin/news.destroy', $item->id) }}"
                                             class="btn btn-danger delete-item"><i
                                                 class="fas fa-trash-alt"></i></a>
-                                        <a href="{{ route('auth/admin.news-copy', $item->id) }}"
+                                        <a href="{{ route('/news/auth/admin/news-copy', $item->id) }}"
                                             class="btn btn-primary"><i class="fas fa-copy"></i></i></a>
                                     </td>
                                 </tr>
@@ -115,7 +115,7 @@
                 let data = $(this).serialize();
                 $.ajax({
                     method: 'PUT',
-                    url: "{{ route('auth/admin.approve.news') }}",
+                    url: "{{ route('/news/auth/admin/approve.news') }}",
                     data: data,
                     success: function(data){
                         if(data.status === 'success'){
