@@ -19,7 +19,7 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
 
                     <a href="#" onclick="event.preventDefault();
