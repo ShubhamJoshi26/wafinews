@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All Social Counts') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth.admin.social-count.create') }}" class="btn btn-primary">
+                    <a href="{{ route('auth/admin.social-count.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -69,9 +69,9 @@
                                                     <td>{{ $socialCount->language }}</td>
 
                                                     <td>
-                                                        <a href="{{ route('auth.admin.social-count.edit', $socialCount->id) }}"
+                                                        <a href="{{ route('auth/admin.social-count.edit', $socialCount->id) }}"
                                                             class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('auth.admin.social-count.destroy', $socialCount->id) }}"
+                                                        <a href="{{ route('auth/admin.social-count.destroy', $socialCount->id) }}"
                                                             class="btn btn-danger delete-item"><i
                                                                 class="fas fa-trash-alt"></i></a>
                                                     </td>

@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('All Sub Category') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth.admin.subcategory.create') }}" class="btn btn-primary">
+                    <a href="{{ route('auth/admin.subcategory.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -55,9 +55,9 @@
 
 
                                             <td>
-                                                <a href="{{ route('auth.admin.subcategory.edit', $category->id) }}"
+                                                <a href="{{ route('auth/admin.subcategory.edit', $category->id) }}"
                                                     class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                <a href="{{ route('auth.admin.subcategory.destroy', $category->id) }}"
+                                                <a href="{{ route('auth/admin.subcategory.destroy', $category->id) }}"
                                                     class="btn btn-danger delete-item"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>

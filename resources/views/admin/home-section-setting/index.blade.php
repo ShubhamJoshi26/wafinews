@@ -35,7 +35,7 @@
                         <div class="tab-pane fade show {{ $loop->index === 0 ? 'active' : '' }}"
                             id="home-{{ $language->lang }}" role="tabpanel" aria-labelledby="home-tab2">
                             <div class="card-body">
-                                <form action="{{ route('auth.admin.home-section-setting.update') }}" method="POST">
+                                <form action="{{ route('auth/admin.home-section-setting.update') }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group">

@@ -49,7 +49,7 @@ class LanguageController extends Controller
 
         toast(__('admin.Created Successfully'),'success')->width('350');
 
-        return redirect()->route('auth.admin.language.index');
+        return redirect()->route('auth/admin.language.index');
     }
 
 
@@ -77,7 +77,7 @@ class LanguageController extends Controller
 
         toast(__('admin.Updated Successfully'),'success')->width('350');
 
-        return redirect()->route('auth.admin.language.index');
+        return redirect()->route('auth/admin.language.index');
     }
 
     /**

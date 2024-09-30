@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth.admin.footer-grid-two.update', $footer->id) }}" method="POST">
+                <form action="{{ route('auth/admin.footer-grid-two.update', $footer->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

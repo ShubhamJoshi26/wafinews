@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth.admin.social-link.store') }}" method="POST">
+                <form action="{{ route('auth/admin.social-link.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">

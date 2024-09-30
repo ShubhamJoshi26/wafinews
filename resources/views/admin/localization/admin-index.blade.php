@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All Strings') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth.admin.category.create') }}" class="btn btn-primary">
+                    <a href="{{ route('auth/admin.category.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -36,7 +36,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <form method="POST" action="{{ route('auth.admin.extract-localize-string') }}">
+                                            <form method="POST" action="{{ route('auth/admin.extract-localize-string') }}">
                                                 @csrf
                                                 <input type="hidden" name="directory"
                                                     value="{{ resource_path('views/admin') }},{{ app_path('Http/Controllers/Admin') }}">
@@ -48,7 +48,7 @@
                                             </form>
 
                                             <form class="translate-from" method="POST"
-                                                action="{{ route('auth.admin.translate-string') }}">
+                                                action="{{ route('auth/admin.translate-string') }}">
                                                 <input type="hidden" name="language_code" value="{{ $language->lang }}">
                                                 <input type="hidden" name="file_name" value="admin">
                                                 <button type="submit"
@@ -135,7 +135,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('auth.admin.update-lang-string') }}" method="POST">
+                    <form action="{{ route('auth/admin.update-lang-string') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="">{{ __('admin.Value') }}</label>
@@ -192,7 +192,7 @@
                 let formData = $(this).serialize();
                 $.ajax({
                     method: 'POST',
-                    url: "{{ route('auth.admin.translate-string') }}",
+                    url: "{{ route('auth/admin.translate-string') }}",
                     data: formData,
                     beforeSend: function() {
                         $('.translate-button').text("Translating Please Wait...")

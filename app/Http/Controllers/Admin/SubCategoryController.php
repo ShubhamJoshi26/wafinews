@@ -50,7 +50,7 @@ class SubCategoryController extends Controller
 
         toast(__('admin.Created Successfully'),'success')->width('350');
 
-        return redirect()->route('auth.admin.subcategory.index');
+        return redirect()->route('auth/admin.subcategory.index');
     }
 
     /**
@@ -88,7 +88,7 @@ class SubCategoryController extends Controller
 
         toast(__('admin.Update Successfully'),'success')->width('350');
 
-        return redirect()->route('auth.admin.subcategory.index');
+        return redirect()->route('auth/admin.subcategory.index');
     }
 
     /**

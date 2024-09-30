@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth.admin.brand.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('auth/admin.brand.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">{{ __('admin.Name') }}</label>

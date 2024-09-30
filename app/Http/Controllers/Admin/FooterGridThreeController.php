@@ -53,7 +53,7 @@ class FooterGridThreeController extends Controller
 
         toast(__('admin.Created Successfully!'), 'success');
 
-        return redirect()->route('auth.admin.footer-grid-three.index');
+        return redirect()->route('auth/admin.footer-grid-three.index');
     }
 
 
@@ -81,7 +81,7 @@ class FooterGridThreeController extends Controller
 
         toast(__('admin.Updated Successfully!'), 'success');
 
-        return redirect()->route('auth.admin.footer-grid-three.index');
+        return redirect()->route('auth/admin.footer-grid-three.index');
     }
 
     /**

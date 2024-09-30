@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth.admin.ad.update', 1) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('auth/admin.ad.update', 1) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <h5 class="text-primary">{{ __('admin.Home Page Ads') }}</h5>

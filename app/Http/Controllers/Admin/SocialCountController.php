@@ -55,7 +55,7 @@ class SocialCountController extends Controller
 
         toast(__('admin.Created Successfully!'), 'success');
 
-        return redirect()->route('auth.admin.social-count.index');
+        return redirect()->route('auth/admin.social-count.index');
 
     }
 
@@ -95,7 +95,7 @@ class SocialCountController extends Controller
 
         toast(__('admin.Update Successfully!'), 'success');
 
-        return redirect()->route('auth.admin.social-count.index');
+        return redirect()->route('auth/admin.social-count.index');
     }
 
     /**

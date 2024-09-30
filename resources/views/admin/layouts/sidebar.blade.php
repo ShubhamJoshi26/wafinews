@@ -12,23 +12,23 @@
         <ul class="sidebar-menu">
             <li class="menu-header">{{ __('admin.Dashboard') }}</li>
             <li class="active">
-                <a href="{{ route('auth.admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>{{ __('admin.Dashboard') }}</span></a>
+                <a href="{{ route('auth/admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>{{ __('admin.Dashboard') }}</span></a>
             </li>
             <li class="menu-header">{{ __('admin.Starter') }}</li>
 
             @if (canAccess(['category index', 'category create', 'category udpate', 'category delete']))
                 <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.category.index') }}"><i class="fas fa-list"></i>
+                        href="{{ route('auth/admin.category.index') }}"><i class="fas fa-list"></i>
                         <span>{{ __('admin.Category') }}</span></a></li>
             @endif
             @if (canAccess(['sub-category index', 'sub-category create', 'sub-category udpate', 'sub-category delete']))
                 <li class="{{ setSidebarActive(['admin.subcategory.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.subcategory.index') }}"><i class="fas fa-list"></i>
+                        href="{{ route('auth/admin.subcategory.index') }}"><i class="fas fa-list"></i>
                         <span>{{ __('Sub Category') }}</span></a></li>
             @endif
             @if (canAccess(['brand index', 'brand create', 'brand udpate', 'brand delete']))
                 <li class="{{ setSidebarActive(['admin.brand.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.brand.index') }}"><i class="fas fa-list"></i>
+                        href="{{ route('auth/admin.brand.index') }}"><i class="fas fa-list"></i>
                         <span>{{ __('Brand') }}</span></a></li>
             @endif
 
@@ -38,10 +38,10 @@
                         <span>{{ __('admin.News') }}</span></a>
                     <ul class="dropdown-menu">
                         <li class="{{ setSidebarActive(['admin.news.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.news.index') }}">{{ __('admin.All News') }}</a></li>
+                                href="{{ route('auth/admin.news.index') }}">{{ __('admin.All News') }}</a></li>
 
                         <li class="{{ setSidebarActive(['admin.pending.news']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.pending.news') }}">{{ __('admin.Pending News') }}</a></li>
+                                href="{{ route('auth/admin.pending.news') }}">{{ __('admin.Pending News') }}</a></li>
 
                     </ul>
                 </li>
@@ -54,11 +54,11 @@
                     <ul class="dropdown-menu">
                         @if (canAccess(['about index']))
                             <li class="{{ setSidebarActive(['admin.about.*']) }}"><a class="nav-link"
-                                    href="{{ route('auth.admin.about.index') }}">{{ __('admin.About Page') }}</a></li>
+                                    href="{{ route('auth/admin.about.index') }}">{{ __('admin.About Page') }}</a></li>
                         @endif
                         @if (canAccess(['conatact index']))
                             <li class="{{ setSidebarActive(['admin.contact.*']) }}"><a class="nav-link"
-                                    href="{{ route('auth.admin.contact.index') }}">{{ __('admin.Contact Page') }}</a></li>
+                                    href="{{ route('auth/admin.contact.index') }}">{{ __('admin.Contact Page') }}</a></li>
                         @endif
                     </ul>
                 </li>
@@ -66,13 +66,13 @@
 
             @if (canAccess(['social count index']))
                 <li class="{{ setSidebarActive(['admin.social-count.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.social-count.index') }}"><i class="fas fa-hashtag"></i>
+                        href="{{ route('auth/admin.social-count.index') }}"><i class="fas fa-hashtag"></i>
                         <span>{{ __('admin.Social Count') }}</span></a></li>
             @endif
 
             @if (canAccess(['contact message index']))
                 <li class="{{ setSidebarActive(['admin.contact-message.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.contact-message.index') }}"><i class="fas fa-id-card-alt"></i>
+                        href="{{ route('auth/admin.contact-message.index') }}"><i class="fas fa-id-card-alt"></i>
                         <span>{{ __('admin.Contact Messages') }} </span>
                         @if ($unReadMessages > 0)
                             <i class="badge bg-danger" style="color:
@@ -82,20 +82,20 @@
             @endif
             @if (canAccess(['home section index']))
                 <li class="{{ setSidebarActive(['admin.home-section-setting.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
+                        href="{{ route('auth/admin.home-section-setting.index') }}"><i class="fas fa-wrench"></i>
                         <span>{{ __('admin.Home Section Setting') }}</span></a></li>
             @endif
 
             @if (canAccess(['advertisement index']))
                 <li class="{{ setSidebarActive(['admin.ad.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.ad.index') }}"><i class="fas fa-ad"></i>
+                        href="{{ route('auth/admin.ad.index') }}"><i class="fas fa-ad"></i>
                         <span>{{ __('admin.Advertisement') }}</span></a></li>
             @endif
 
 
             @if (canAccess(['subscribers index']))
                 <li class="{{ setSidebarActive(['admin.subscribers.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.subscribers.index') }}"><i class="fas fa-users"></i>
+                        href="{{ route('auth/admin.subscribers.index') }}"><i class="fas fa-users"></i>
                         <span>{{ __('admin.Subscribers') }}</span></a></li>
             @endif
 
@@ -114,15 +114,15 @@
                         <span>{{ __('admin.Footer') }} {{ __('admin.Setting') }}</span></a>
                     <ul class="dropdown-menu">
                         <li class="{{ setSidebarActive(['admin.social-link.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.social-link.index') }}">{{ __('admin.Social Links') }}</a></li>
+                                href="{{ route('auth/admin.social-link.index') }}">{{ __('admin.Social Links') }}</a></li>
                         <li class="{{ setSidebarActive(['admin.footer-info.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.footer-info.index') }}">{{ __('admin.Footer Info') }}</a></li>
+                                href="{{ route('auth/admin.footer-info.index') }}">{{ __('admin.Footer Info') }}</a></li>
                         <li class="{{ setSidebarActive(['admin.footer-grid-one.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.footer-grid-one.index') }}">{{ __('admin.Footer Grid One') }}</a></li>
+                                href="{{ route('auth/admin.footer-grid-one.index') }}">{{ __('admin.Footer Grid One') }}</a></li>
                         <li class="{{ setSidebarActive(['admin.footer-grid-two.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.footer-grid-two.index') }}">{{ __('admin.Footer Grid Two') }}</a></li>
+                                href="{{ route('auth/admin.footer-grid-two.index') }}">{{ __('admin.Footer Grid Two') }}</a></li>
                         <li class="{{ setSidebarActive(['admin.footer-grid-three.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.footer-grid-three.index') }}">{{ __('admin.Footer Grid Three') }}</a>
+                                href="{{ route('auth/admin.footer-grid-three.index') }}">{{ __('admin.Footer Grid Three') }}</a>
                         </li>
 
                     </ul>
@@ -141,17 +141,17 @@
                     <ul class="dropdown-menu">
 
                         <li class="{{ setSidebarActive(['admin.role-users.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.role-users.index') }}">{{ __('admin.Role Users') }}</a></li>
+                                href="{{ route('auth/admin.role-users.index') }}">{{ __('admin.Role Users') }}</a></li>
 
                         <li class="{{ setSidebarActive(['admin.role.*']) }}"><a class="nav-link"
-                                href="{{ route('auth.admin.role.index') }}">{{ __('admin.Roles and Permissions') }}</a></li>
+                                href="{{ route('auth/admin.role.index') }}">{{ __('admin.Roles and Permissions') }}</a></li>
                     </ul>
                 </li>
             @endif
 
             @if (canAccess(['setting index']))
                 <li class="{{ setSidebarActive(['admin.setting.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.setting.index') }}"><i class="fas fa-cog"></i>
+                        href="{{ route('auth/admin.setting.index') }}"><i class="fas fa-cog"></i>
                         <span>{{ __('admin.Settings') }}</span></a></li>
             @endif
 
@@ -168,15 +168,15 @@
                     <span>{{ __('admin.Localization') }}</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setSidebarActive(['admin.language.*']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.language.index') }}">
+                        href="{{ route('auth/admin.language.index') }}">
                         <span>{{ __('admin.Languages') }}</span></a></li>
 
                     <li class="{{ setSidebarActive(['admin.frontend-localization.index']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.frontend-localization.index') }}">
+                        href="{{ route('auth/admin.frontend-localization.index') }}">
                         <span>{{ __('admin.Frontend Lang') }}</span></a></li>
 
                     <li class="{{ setSidebarActive(['admin.admin-localization.index']) }}"><a class="nav-link"
-                        href="{{ route('auth.admin.admin-localization.index') }}">
+                        href="{{ route('auth/admin.admin-localization.index') }}">
                         <span>{{ __('admin.Admin Lang') }}</span></a></li>
                 </ul>
             </li>

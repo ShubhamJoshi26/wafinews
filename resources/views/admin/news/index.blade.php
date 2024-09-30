@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>{{ __('admin.All News') }}</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('auth.admin.news.create') }}" class="btn btn-primary">
+                    <a href="{{ route('auth/admin.news.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> {{ __('admin.Create new') }}
                     </a>
                 </div>
@@ -117,12 +117,12 @@
 
 
                                                     <td>
-                                                        <a href="{{ route('auth.admin.news.edit', $item->id) }}"
+                                                        <a href="{{ route('auth/admin.news.edit', $item->id) }}"
                                                             class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('auth.admin.news.destroy', $item->id) }}"
+                                                        <a href="{{ route('auth/admin.news.destroy', $item->id) }}"
                                                             class="btn btn-danger delete-item"><i
                                                                 class="fas fa-trash-alt"></i></a>
-                                                        <a href="{{ route('auth.admin.news-copy', $item->id) }}"
+                                                        <a href="{{ route('auth/admin.news-copy', $item->id) }}"
                                                             class="btn btn-primary"><i class="fas fa-copy"></i></i></a>
                                                     </td>
                                                 </tr>
@@ -168,7 +168,7 @@
 
                 $.ajax({
                     method: 'GET',
-                    url: "{{ route('auth.admin.toggle-news-status') }}",
+                    url: "{{ route('auth/admin.toggle-news-status') }}",
                     data: {
                         id:id,
                         name:name,

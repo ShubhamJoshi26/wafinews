@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('auth.admin.brand.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('auth/admin.brand.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
