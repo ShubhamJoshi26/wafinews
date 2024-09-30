@@ -26,7 +26,7 @@ class AdminAuthenticationController extends Controller
     {
         $request->authenticate();
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('dashboard');
     }
 
     public function logout(Request $request): RedirectResponse
@@ -37,7 +37,7 @@ class AdminAuthenticationController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('login');
     }
 
     public function forgotPassword()
@@ -76,7 +76,7 @@ class AdminAuthenticationController extends Controller
         $admin->remember_token = null;
         $admin->save();
 
-        return redirect()->route('admin.login')->with('success', __('admin.Password reset successfull'));
+        return redirect()->route('login')->with('success', __('admin.Password reset successfull'));
 
     }
 }
