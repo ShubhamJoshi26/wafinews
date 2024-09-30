@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('auth.admin.news.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">{{ __('admin.Language') }}</label>
@@ -162,7 +162,7 @@
                 let lang = $(this).val();
                 $.ajax({
                     method: 'GET',
-                    url: "{{ route('admin.fetch-news-category') }}",
+                    url: "{{ route('auth.admin.fetch-news-category') }}",
                     data: {
                         lang: lang
                     },

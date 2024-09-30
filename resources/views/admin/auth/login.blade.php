@@ -43,7 +43,7 @@
                 @if (session()->has('success'))
                     <i><b style="color:green">{{ session()->get('success') }}</b></i>
                 @endif
-                <form method="POST" action="{{ route('admin.handle-login') }}" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('auth.admin.handle-login') }}" class="needs-validation" novalidate="">
                     @csrf
                   <div class="form-group">
                     <label for="email">{{ __('admin.Email') }}</label>
@@ -60,7 +60,7 @@
                     <div class="d-block">
                     	<label for="password" class="control-label">{{ __('admin.Password') }}</label>
                       <div class="float-right">
-                        <a href="{{ route('admin.forgot-password') }}" class="text-small">
+                        <a href="{{ route('auth.admin.forgot-password') }}" class="text-small">
                           {{ __('admin.Forgot Password?') }}
                         </a>
                       </div>

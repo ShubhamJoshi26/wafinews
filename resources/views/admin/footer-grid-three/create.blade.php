@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.footer-grid-three.store') }}" method="POST">
+                <form action="{{ route('auth.admin.footer-grid-three.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">{{ __('admin.Language') }}</label>

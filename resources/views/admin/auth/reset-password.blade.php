@@ -40,7 +40,7 @@
               <div class="card-header"><h4>{{ __('admin.Reset Password') }}</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="{{ route('admin.reset-password.send') }}" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('auth.admin.reset-password.send') }}" class="needs-validation" novalidate="">
                     @csrf
                   <div class="form-group">
                     <label for="email">{{ __('admin.Email') }}</label>

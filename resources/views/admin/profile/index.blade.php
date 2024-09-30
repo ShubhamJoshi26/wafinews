@@ -19,7 +19,7 @@
 
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <form method="post" action="{{ route('admin.profile.update', auth()->guard('admin')->user()->id) }}" class="needs-validation" novalidate="" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('auth.admin.profile.update', auth()->guard('admin')->user()->id) }}" class="needs-validation" novalidate="" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-header">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <form method="post" action="{{ route('admin.profile-password.update', $user->id) }}" class="needs-validation" novalidate="">
+                        <form method="post" action="{{ route('auth.admin.profile-password.update', $user->id) }}" class="needs-validation" novalidate="">
                             @csrf
                             @method('PUT')
                             <div class="card-header">

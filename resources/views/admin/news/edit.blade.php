@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('auth.admin.news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -180,7 +180,7 @@
                 let lang = $(this).val();
                 $.ajax({
                     method: 'GET',
-                    url: "{{ route('admin.fetch-news-category') }}",
+                    url: "{{ route('auth.admin.fetch-news-category') }}",
                     data: {
                         lang: lang
                     },

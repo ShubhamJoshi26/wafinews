@@ -44,7 +44,7 @@
                 @if (session()->has('success'))
                     <i><b style="color:green">{{ session()->get('success') }}</b></i>
                 @endif
-                <form method="POST" action="{{ route('admin.forgot-password.send') }}" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('auth.admin.forgot-password.send') }}" class="needs-validation" novalidate="">
                     @csrf
                   <div class="form-group">
                     <label for="email">{{ __('admin.Email') }}</label>
