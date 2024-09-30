@@ -47,7 +47,7 @@ class SocialLinkController extends Controller
 
         toast(__('admin.Created Successfully!'), 'success');
 
-        return redirect()->route('admin.social-link.index');
+        return redirect()->route('auth.admin.social-link.index');
     }
 
 
@@ -74,7 +74,7 @@ class SocialLinkController extends Controller
 
         toast(__('admin.Update Successfully!'), 'success');
 
-        return redirect()->route('admin.social-link.index');
+        return redirect()->route('auth.admin.social-link.index');
     }
 
     /**

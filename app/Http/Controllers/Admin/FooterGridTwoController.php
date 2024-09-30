@@ -52,7 +52,7 @@ class FooterGridTwoController extends Controller
 
         toast(__('admin.Created Successfully!'), 'success');
 
-        return redirect()->route('admin.footer-grid-two.index');
+        return redirect()->route('auth.admin.footer-grid-two.index');
     }
 
 
@@ -80,7 +80,7 @@ class FooterGridTwoController extends Controller
 
         toast(__('admin.Updated Successfully!'), 'success');
 
-        return redirect()->route('admin.footer-grid-two.index');
+        return redirect()->route('auth.admin.footer-grid-two.index');
     }
 
     /**

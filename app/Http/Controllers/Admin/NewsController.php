@@ -115,7 +115,7 @@ class NewsController extends Controller
 
         toast(__('admin.Created Successfully!'), 'success')->width('330');
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('auth.admin.news.index');
     }
 
     /**
@@ -207,7 +207,7 @@ class NewsController extends Controller
 
         toast(__('admin.Update Successfully!'), 'success')->width('330');
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('auth.admin.news.index');
     }
 
     /**

@@ -48,7 +48,7 @@ class RolePermisionController extends Controller
 
         toast(__('admin.Created Successfully'), 'success');
 
-        return redirect()->route('admin.role.index');
+        return redirect()->route('auth.admin.role.index');
 
     }
 
@@ -75,7 +75,7 @@ class RolePermisionController extends Controller
 
         toast(__('admin.Update Successfully'), 'success');
 
-        return redirect()->route('admin.role.index');
+        return redirect()->route('auth.admin.role.index');
     }
 
     function destory(string $id) : Response {
