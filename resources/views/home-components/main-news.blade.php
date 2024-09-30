@@ -21,7 +21,7 @@
                                         <a
                                             href="{{ route('news-details',[$news->category->name,$news->subCategory->name,$news->slug]) }}">{{ $news->auther->name }}</a></span>
                                     <span class="utf_post_date"><i
-                                            class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($news->create_at)) }}</span>
+                                            class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($news->created_at)) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                                         class="fa fa-user"></i> <a
                                                         href="{{ route('news-details',[$newsOne->category->name,$newsOne->subCategory->name,$newsOne->slug]) }}">{{ $newsOne->auther->name }}</a></span>
                                                 <span class="utf_post_date"><i
-                                                        class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsOne->create_at)) }}</span>
+                                                        class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsOne->created_at)) }}</span>
                                             </div>
                                             <p>{!! truncate($newsOne->content, 100) !!}</p>
                                         </div>
@@ -88,7 +88,7 @@
                                                                     class="fa fa-user"></i> <a
                                                                     href="{{ route('news-details',[$newsOne->category->name,$newsOne->subCategory->name,$newsOne->slug]) }}">{{ $newsOne->auther->name }}</a></span>
                                                             <span class="utf_post_date"><i
-                                                                    class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsOne->create_at)) }}</span>
+                                                                    class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsOne->created_at)) }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -117,7 +117,7 @@
                                             <h2 class="utf_post_title"> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{!! truncate($newsTwo->title) !!}</a> </h2>
                                             <div class="utf_post_meta"> <span class="utf_post_author"><i
                                                         class="fa fa-user"></i> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{{$newsTwo->auther->name}}</a></span>
-                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsTwo->create_at)) }}</span> </div>
+                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsTwo->created_at)) }}</span> </div>
                                         </div>
                                     </div>
                                 @endif
@@ -137,7 +137,7 @@
                                                 <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{!! truncate($newsTwo->title) !!} </a> </h2>
                                                 <div class="utf_post_meta"> <span class="utf_post_author"><i
                                                             class="fa fa-user"></i> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{{$newsTwo->auther->name}}</a></span> <span class="utf_post_date"><i
-                                                            class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsTwo->create_at)) }}</span> </div>
+                                                            class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsTwo->created_at)) }}</span> </div>
                                             </div>
                                         </div>
                                     </li>
@@ -160,7 +160,7 @@
                                             <h2 class="utf_post_title"> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{!! truncate($newsThree->title) !!}</a> </h2>
                                             <div class="utf_post_meta"> <span class="utf_post_author"><i
                                                         class="fa fa-user"></i> <a href="{{ route('news-details',[$newsTwo->category->name,$newsTwo->subCategory->name,$newsTwo->slug]) }}">{{$newsThree->auther->name}}</a></span>
-                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsThree->create_at)) }}</span> </div>
+                                                <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsThree->created_at)) }}</span> </div>
                                         </div>
                                     </div>
                                 @endif
@@ -179,7 +179,7 @@
                                                 <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$newsThree->category->name,$newsThree->subCategory->name,$newsThree->slug]) }}">{!! truncate($newsThree->title) !!} </a> </h2>
                                                 <div class="utf_post_meta"> <span class="utf_post_author"><i
                                                             class="fa fa-user"></i> <a href="{{ route('news-details',[$newsThree->category->name,$newsThree->subCategory->name,$newsThree->slug]) }}">{{$newsThree->auther->name}}</a></span> <span class="utf_post_date"><i
-                                                            class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsThree->create_at)) }}</span> </div>
+                                                            class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($newsThree->created_at)) }}</span> </div>
                                             </div>
                                         </div>
                                     </li>
@@ -227,7 +227,7 @@
                                                     class="fa fa-user"></i> <a
                                                     href="#">{{ $popNews->auther->name }}</a></span> <span
                                                 class="utf_post_date"><i
-                                                    class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($popNews->create_at)) }}</span>
+                                                    class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($popNews->created_at)) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -254,7 +254,7 @@
                                                                 class="fa fa-user"></i> <a
                                                                 href="{{ route('news-details',[$popNews->category->name,$popNews->subCategory->name,$popNews->slug]) }}">{{ $popNews->auther->name }}</a></span>
                                                         <span class="utf_post_date"><i
-                                                                class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($popNews->create_at)) }}</span>
+                                                                class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($popNews->created_at)) }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,7 +285,7 @@
                           <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}"> <img class="img-fluid" src="{{ asset($newsFour->image) }}" alt="" /> </a> </div>
                           <div class="utf_post_content">
                           <h2 class="utf_post_title"> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{!! truncate($newsFour->title) !!}</a> </h2>
-                          <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->create_at)) }}</span> </div>
+                          <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->created_at)) }}</span> </div>
                           </div>
                       </div>
                   @endif
@@ -299,7 +299,7 @@
                               <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}"> <img class="img-fluid" src="{{ asset($newsFour->image) }}" alt="" /> </a> </div>                    
                               <div class="utf_post_content">
                                   <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{!! truncate($newsFour->title) !!}</a> </h2>
-                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->create_at)) }}</span> </div>
+                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFour->category->name,$newsFour->subCategory->name,$newsFour->slug]) }}">{{$newsFour->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFour->created_at)) }}</span> </div>
                               </div>
                               </div>
                           </li>
@@ -321,7 +321,7 @@
                         <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}"> <img class="img-fluid" src="{{ asset($newsFive->image) }}" alt="" /> </a> </div>
                         <div class="utf_post_content">
                         <h2 class="utf_post_title"> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{!! truncate($newsFive->title) !!}</a> </h2>
-                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->create_at)) }}</span> </div>
+                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->created_at)) }}</span> </div>
                         </div>
                     </div>
                   @endif
@@ -335,7 +335,7 @@
                               <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}"> <img class="img-fluid" src="{{ asset($newsFive->image) }}" alt="" /> </a> </div>                    
                               <div class="utf_post_content">
                                   <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{!! truncate($newsFive->title) !!}</a> </h2>
-                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->create_at)) }}</span> </div>
+                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsFive->category->name,$newsFive->subCategory->name,$newsFive->slug]) }}">{{$newsFive->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsFive->created_at)) }}</span> </div>
                               </div>
                               </div>
                           </li>
@@ -357,7 +357,7 @@
                         <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}"> <img class="img-fluid" src="{{ asset($newsSix->image) }}" alt="" /> </a> </div>
                         <div class="utf_post_content">
                         <h2 class="utf_post_title"> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{!! truncate($newsSix->title) !!}</a> </h2>
-                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->create_at)) }}</span> </div>
+                        <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->created_at)) }}</span> </div>
                         </div>
                     </div>
                   @endif
@@ -372,7 +372,7 @@
                               <div class="utf_post_thumb"> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}"> <img class="img-fluid" src="{{ asset($newsSix->image) }}" alt="" /> </a> </div>                    
                               <div class="utf_post_content">
                                   <h2 class="utf_post_title title-small"> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{!! truncate($newsSix->title) !!}</a> </h2>
-                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->create_at)) }}</span> </div>
+                                  <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$newsSix->category->name,$newsSix->subCategory->name,$newsSix->slug]) }}">{{$newsSix->auther->name}}</a></span> <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y', strtotime($newsSix->created_at)) }}</span> </div>
                               </div>
                               </div>
                           </li>
