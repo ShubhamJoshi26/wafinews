@@ -198,7 +198,7 @@
                 <div class="sidebar utf_sidebar_right">
                     <div class="widget">
                         <h3 class="utf_block_title"><span>Follow Us</span></h3>
-                        <ul class="unstyled utf_footer_social">
+                        <ul class="unstyled utf_footer_social" style="display: inline-flex;">
                             @foreach ($socialLinks as $link)
                             <li>
                                 <a href="{{ $link->url }}">
