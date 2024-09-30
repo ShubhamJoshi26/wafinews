@@ -102,7 +102,7 @@
                                     </div>
                                 </li>
                                     @endif
-                                    <li> <a href="about.html">About Us</a> </li>
+                                    <li> <a href="/about">About Us</a> </li>
                                     @if(count($FeaturedCategories)>0)
                                     @foreach ($FeaturedCategories as $category)
                                     <li>
