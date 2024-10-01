@@ -8,9 +8,9 @@
                   @if ($loop->index <= 3)
                     <div class="item" style="background-image:url({{ asset($slider->image) }})">
                         <div class="utf_featured_post">
-                            <div class="utf_post_content"> <a class="utf_post_cat" href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}">{{ $slider->category->name }}</a>
-                                <h2 class="utf_post_title title-extra-large"> <a href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}">{!! truncate($slider->title, 100) !!}</a> </h2>
-                                <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}"> {{ __('frontend.by') }} {{ $slider->auther->name }}</a></span>
+                            <div class="utf_post_content"> <a class="utf_post_cat" href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}">{{ $slider->category->name }}</a>
+                                <h2 class="utf_post_title title-extra-large"> <a href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}">{!! truncate($slider->title, 100) !!}</a> </h2>
+                                <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}"> {{ __('frontend.by') }} {{ $slider->auther->name }}</a></span>
                                 <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($slider->created_at)) }}</span>
                             </div>
                         </div>
@@ -26,11 +26,11 @@
                         @foreach ($heroSlider as $slider)
                           @if ($loop->index > 3 && $loop->index <= 4)
                             <div class="utf_post_overaly_style contentTop hot-post-top clearfix">
-                              <div class="utf_post_thumb"> <a href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}"><img class="img-fluid"
+                              <div class="utf_post_thumb"> <a href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}"><img class="img-fluid"
                                           src="{{ asset($slider->image) }}" alt="" /></a> </div>
-                              <div class="utf_post_content"> <a class="utf_post_cat" href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}">{{ $slider->category->name }}</a>
-                                  <h2 class="utf_post_title title-large"> <a href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}">{!! truncate($slider->title, 100) !!}</a> </h2>
-                                  <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}">{{ $slider->auther->name }}</a></span>
+                              <div class="utf_post_content"> <a class="utf_post_cat" href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}">{{ $slider->category->name }}</a>
+                                  <h2 class="utf_post_title title-large"> <a href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}">{!! truncate($slider->title, 100) !!}</a> </h2>
+                                  <span class="utf_post_author"><i class="fa fa-user"></i> <a href="{{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}">{{ $slider->auther->name }}</a></span>
                                   <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($slider->created_at)) }}</span>
                               </div>
                             </div>
@@ -41,12 +41,12 @@
                     @if ($loop->index > 4 && $loop->index <= 7)
                       <div class="col-md-6 pad-r-small">
                           <div class="utf_post_overaly_style contentTop utf_hot_post_bottom clearfix">
-                              <div class="utf_post_thumb"> <a {{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}><img class="img-fluid"
+                              <div class="utf_post_thumb"> <a {{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}><img class="img-fluid"
                                           src="{{ asset($slider->image) }}" alt="" /></a> </div>
-                              <div class="utf_post_content"> <a class="utf_post_cat" {{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}>{{ $slider->category->name }}</a>
-                                  <h2 class="utf_post_title title-medium"> <a {{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}>{!! truncate($slider->title, 100) !!}</a> </h2>
+                              <div class="utf_post_content"> <a class="utf_post_cat" {{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}>{{ $slider->category->name }}</a>
+                                  <h2 class="utf_post_title title-medium"> <a {{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}>{!! truncate($slider->title, 100) !!}</a> </h2>
                                   <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i> <a
-                                              {{ route('news-details',[$slider->category->name,$slider->subCategory->name,$slider->slug]) }}>{{ $slider->auther->name }}</a></span></div>
+                                              {{ route('news-details',[strtolower($slider->category->name),strtolower($slider->subCategory->name),$slider->slug]) }}>{{ $slider->auther->name }}</a></span></div>
                               </div>
                           </div>
                       </div>
