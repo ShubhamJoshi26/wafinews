@@ -185,7 +185,7 @@
             $('#category').on('change',function(){
                 var category_id = $(this).val();
                 $.ajax({
-                    url:"/admin/news/sub-category-by-category/"+category_id,
+                    url:"/news/auth/admin/news/sub-category-by-category/"+category_id,
                     type:'get',
                     success:function(res)
                     {
