@@ -332,8 +332,8 @@ class HomeController extends Controller
         $categoryId = Category::where('slug',$catSlug)->get(['id','name']);
         if($categoryId!=null && count($categoryId)>0)
         {
-            $allNews = News::where('category_id',$categoryId[0]['id'])->with('subCategory','category')->latest()
-            ->paginate(10)->activeEntries()
+            $allNews = News::where('category_id',$categoryId[0]['id'])->with('subCategory','category')->activeEntries()->latest()
+            ->paginate(10)
             ->withQueryString();
             $allSubCategory = SubCategory::where('category_id',$categoryId[0]['id'])->get();
             $popularNews = News::with(['category','subCategory'])->where('show_at_popular', 1)
