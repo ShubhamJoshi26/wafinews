@@ -161,10 +161,14 @@ class NewsController extends Controller
 
         $news = News::findOrFail($id);
 
-        if($news->auther_id != auth()->guard('admin')->user()->id || getRole() != 'Super Admin'){
-            return abort(404);
+        // if($news->auther_id != auth()->guard('admin')->user()->id || getRole() != 'Super Admin'){
+        //     return abort(404);
+        // }
+        if(!canAccess(['news all-access'])){
+            if($news->auther_id != auth()->guard('admin')->user()->id){
+                return abort(404);
+            }
         }
-
         /** Handle image */
         $imagePath = $this->handleFileUpload($request, 'image');
 
