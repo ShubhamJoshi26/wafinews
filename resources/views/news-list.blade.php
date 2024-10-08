@@ -49,7 +49,8 @@
                                             strtotime($news->created_at)) }}</span> <span
                                             class="post-comment pull-right"><i class="fa fa-comments-o"></i> </span>
                                     </div>
-                                    <p>{!! truncate($news->content,100) !!}</p>
+                                    <p>{!! truncate($news->title)
+                                            !!}</p>
                                 </div>
                             </div>
                         </div>
