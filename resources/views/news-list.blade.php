@@ -46,8 +46,7 @@
                                     <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i>
                                             <a href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}"> {{ $news->auther->name }}</a></span> <span
                                             class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y',
-                                            strtotime($news->created_at)) }}</span> <span
-                                            class="post-comment pull-right"><i class="fa fa-comments-o"></i> </span>
+                                            strtotime($news->created_at)) }}</span> 
                                     </div>
                                     <p>{!! truncate($news->title)
                                             !!}</p>
