@@ -51,7 +51,7 @@
                     @if (!empty($ad) && $ad->home_top_bar_ad_status == 1)
                         <div class="col-md-9 col-sm-12 header-right">
                             <div class="ad-banner float-right"> <a href="{{ $ad->home_top_bar_ad_url }}"><img
-                                src="{{ $ad->home_top_bar_ad }}" class="img-fluid" alt=""></a>
+                                src="/{{ $ad->home_top_bar_ad }}" class="img-fluid" alt=""></a>
                             </div>
                         </div>
                     @endif
