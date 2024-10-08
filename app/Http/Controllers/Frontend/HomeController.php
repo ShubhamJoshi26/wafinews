@@ -14,6 +14,7 @@ use App\Models\News;
 use App\Models\RecivedMail;
 use App\Models\SocialCount;
 use App\Models\SocialLink;
+use App\Models\SubCategory;
 use App\Models\Subscriber;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -324,5 +325,26 @@ class HomeController extends Controller
         toast(__('frontend.Message sent successfully!'), 'success');
 
         return redirect()->back();
+    }
+
+    public function categoryList($catSlug)
+    {
+        $categoryId = Category::where('slug',$catSlug)->get(['id','name']);
+        if($categoryId!=null && count($categoryId)>0)
+        {
+            $allNews = News::where('category_id',$categoryId[0]['id'])->with('subCategory','category')->latest()
+            ->paginate(2)
+            ->withQueryString();
+            $allSubCategory = SubCategory::where('category_id',$categoryId[0]['id'])->get();
+            $popularNews = News::with(['category','subCategory'])->where('show_at_popular', 1)
+            ->activeEntries()->withLocalize()
+            ->orderBy('updated_at', 'DESC')->take(4)->get();
+            $socialLinks = SocialLink::where('status',1)->get();
+            return view('news-list',compact('allNews','allSubCategory','categoryId','popularNews','socialLinks'));
+        }
+        else
+        {
+            return redirect()->back()->with('error','Category Not Found');
+        }
     }
 }

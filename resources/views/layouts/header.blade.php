@@ -106,7 +106,7 @@
                                     @if(count($FeaturedCategories)>0)
                                     @foreach ($FeaturedCategories as $category)
                                     <li>
-                                        <a href="{{ route('news', ['category' => $category->slug]) }}">{{ $category->name }}</a>
+                                        <a href="{{ route('categorylist', [$category->slug]) }}">{{ $category->name }}</a>
                                     </li>
 
                                 @endforeach

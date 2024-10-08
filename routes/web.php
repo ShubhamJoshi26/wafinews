@@ -56,5 +56,5 @@ Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 /** Contact Page Route */
 Route::post('contact', [HomeController::class, 'handleContactFrom'])->name('contact.submit');
 
-// Sub Category Route
-
+// Category Route
+Route::get('/category/{category_title}',[HomeController::class,'categoryList'])->name('categorylist');
