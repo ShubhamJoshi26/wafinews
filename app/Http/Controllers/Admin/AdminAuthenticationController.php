@@ -37,7 +37,7 @@ class AdminAuthenticationController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('news.auth.admin.login');
     }
 
     public function forgotPassword()
