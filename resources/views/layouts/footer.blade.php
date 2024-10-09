@@ -51,7 +51,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 text-center">
-        <div class="utf_copyright_info"> <span>Copyright © 2022 All Rights Reserved.</span> </div>
+        <div class="utf_copyright_info"> <span>Copyright © {{date(Y)}} All Rights Reserved.</span> </div>
       </div>        
     </div>      
     <div id="back-to-top" class="back-to-top">
