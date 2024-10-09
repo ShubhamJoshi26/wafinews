@@ -9,9 +9,6 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li>{{$categoryId[0]['name']}}</li>
-                    @if (count($subCategory)>0)
-                    <li>{{$subCategory[0]['name']}}</li>
-                    @endif
                 </ul>
             </div>
         </div>

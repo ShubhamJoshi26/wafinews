@@ -348,28 +348,4 @@ class HomeController extends Controller
             return redirect()->back()->with('error','Category Not Found');
         }
     }
-
-    public function subCategoryList($category,$subCategory)
-    {
-        $subCategory = SubCategory::where('name',str_replace('-',' ',$subCategory))->get(['id','name','category_id']);
-        if($subCategory!=null && count($subCategory)>0)
-        {
-            $allNews = News::where('sub_category_id',$subCategory[0]['id'])->with('subCategory','category')->activeEntries()->latest()
-            ->paginate(5)
-            ->withQueryString();
-            $allSubCategory = SubCategory::where('id',$subCategory[0]['id'])->get();
-            $popularNews = News::with(['category','subCategory'])->where('show_at_popular', 1)
-            ->activeEntries()->withLocalize()
-            ->orderBy('updated_at', 'DESC')->take(4)->get();
-            $socialLinks = SocialLink::where('status',1)->get();
-            $ad = Ad::first();
-            $categoryId = Category::where('id',$subCategory[0]['category_id'])->get(['id','name']);
-            // dd($categoryId);
-            return view('news-list',compact('allNews','allSubCategory','categoryId','popularNews','socialLinks','ad','subCategory'));
-        }
-        else
-        {
-            return redirect()->back()->with('error','Category Not Found');
-        }
-    }
 }
