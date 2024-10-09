@@ -5,7 +5,6 @@
             <div id="utf_latest_news_slide" class="owl-carousel owl-theme utf_latest_news_slide">
                 @if(count($recentNews)>0)
                 @foreach ($recentNews as $news)
-                @if ($loop->index <= 1)
                     <div class="item">
                         <div class="utf_post_block_style clearfix">
                             <div class="utf_post_thumb"> <a href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}"><img
@@ -26,7 +25,6 @@
                             </div>
                         </div>
                     </div>
-                @endif
             @endforeach
                 @endif
             </div>
