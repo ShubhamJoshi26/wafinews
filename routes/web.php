@@ -58,3 +58,6 @@ Route::post('contact', [HomeController::class, 'handleContactFrom'])->name('cont
 
 // Category Route
 Route::get('/{category_title}',[HomeController::class,'categoryList'])->name('categorylist');
+
+//Sub Category Route
+Route::get('/{category_title}/{subcategory_title}',[HomeController::class,'subCategoryList'])->name('subcategorylist');

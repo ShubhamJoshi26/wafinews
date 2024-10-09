@@ -4,8 +4,7 @@
         'status' => 1,
         'language' => getLangauge(),
         'show_at_nav' => 1,
-    ])->get();
-
+    ])->with('subCategory')->get();
     $brands = \App\Models\Brand::where(['is_active' => 1, 'show_at_nav' => 1])->get();
 
 @endphp
@@ -104,12 +103,21 @@
                                     @endif
                                     <li> <a href="/about">About Us</a> </li>
                                     @if(count($FeaturedCategories)>0)
-                                    @foreach ($FeaturedCategories as $category)
-                                    <li>
-                                        <a href="{{ route('categorylist', [$category->slug]) }}">{{ $category->name }}</a>
-                                    </li>
-
-                                @endforeach
+                                        @foreach ($FeaturedCategories as $category)
+                                            @if (count($category->subCategory)>0)
+                                                <li class="dropdown"> <a href="{{ route('categorylist', [$category->slug]) }}" class="dropdown-toggle" data-toggle="dropdown">{{ $category->name }} <i class="fa fa-angle-down"></i></a>
+                                                    <ul class="utf_dropdown_menu" role="menu">
+                                                        @foreach ($category->subCategory as $subcategory)
+                                                            <li><a href="{{ route('subcategorylist', [$category->slug,strtolower(str_replace(' ','-',$subcategory->name))]) }}"><i class="fa fa-angle-double-right"></i> {{$subcategory->name}} </a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a href="{{ route('categorylist', [$category->slug]) }}">{{ $category->name }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     @endif
                                 </ul>
                             </div>
