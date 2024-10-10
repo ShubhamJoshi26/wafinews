@@ -150,10 +150,10 @@ class HomeController extends Controller
             ->get();
 
         $socialCounts = SocialCount::where(['status' => 1, 'language' => getLangauge()])->get();
-
+        $socialLinks = SocialLink::where('status',1)->get();
         $ad = Ad::first();
 
-        return view('news-details', compact('news', 'recentNews', 'mostCommonTags', 'nextPost', 'previousPost', 'relatedPosts', 'socialCounts', 'ad'));
+        return view('news-details', compact('news', 'recentNews', 'mostCommonTags', 'nextPost', 'previousPost', 'relatedPosts', 'socialCounts', 'ad','socialLinks'));
     }
 
     public function news(Request $request)
