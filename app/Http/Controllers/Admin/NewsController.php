@@ -91,6 +91,7 @@ class NewsController extends Controller
         $news->content = $request->content;
         $news->meta_title = $request->meta_title;
         $news->meta_description = $request->meta_description;
+        $news->meta_keywords = $request->meta_keywords;
         $news->is_breaking_news = $request->is_breaking_news == 1 ? 1 : 0;
         $news->show_at_slider = $request->show_at_slider == 1 ? 1 : 0;
         $news->show_at_popular = $request->show_at_popular == 1 ? 1 : 0;
@@ -181,6 +182,7 @@ class NewsController extends Controller
         $news->content = $request->content;
         $news->meta_title = $request->meta_title;
         $news->meta_description = $request->meta_description;
+        $news->meta_keywords = $request->meta_keywords;
         $news->is_breaking_news = $request->is_breaking_news == 1 ? 1 : 0;
         $news->show_at_slider = $request->show_at_slider == 1 ? 1 : 0;
         $news->show_at_popular = $request->show_at_popular == 1 ? 1 : 0;

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from utouchdesign.com/themes/envato/altroznews/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2024 12:15:23 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>@hasSection('title') @yield('title') @else {{ $settings['site_seo_title'] }} @endif </title>
     <meta name="description" content="@hasSection('meta_description') @yield('meta_description') @else {{ $settings['site_seo_description'] }} @endif " />
-    <meta name="keywords" content="{{ $settings['site_seo_keywords'] }}" />
+    <meta name="keywords" content="@hasSection('meta_keywords') @yield('meta_keywords') @else {{ $settings['site_seo_keywords'] }} @endif " />
 
     <meta name="og:title" content="@yield('meta_og_title')" />
     <meta name="og:description" content="@yield('meta_og_description')" />

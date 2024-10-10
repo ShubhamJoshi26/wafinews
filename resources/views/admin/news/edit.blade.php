@@ -103,6 +103,15 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="">{{ __('Meta Keywords') }}</label>
+                        <input name="meta_keywords" value="{{ $news->meta_keywords }}" type="text" class="form-control"
+                            id="name">
+                        @error('meta_keywords')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Meta Description') }}</label>

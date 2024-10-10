@@ -61,7 +61,7 @@
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Ttile') }}</label>
-                        <input name="title" type="text" class="form-control" id="name">
+                        <input name="title" type="text" class="form-control" id="name" value="{{old('title')??''}}">
                         @error('title')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -69,7 +69,7 @@
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Content') }}</label>
-                        <textarea name="content" class="summernote-simple"></textarea>
+                        <textarea name="content" class="summernote-simple">{{old('content')??""}}</textarea>
                         @error('content')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -85,15 +85,23 @@
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Meta Title') }}</label>
-                        <input name="meta_title" type="text" class="form-control" id="name">
+                        <input name="meta_title" type="text" class="form-control" id="name" value="{{old('meta_title')??''}}">
                         @error('meta_title')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="">{{ __('Meta Keywords') }}</label>
+                        <input name="meta_keywords" type="text" class="form-control" id="name" value="{{old('meta_keywords')??''}}">
+                        @error('meta_keywords')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="">{{ __('admin.Meta Description') }}</label>
-                        <textarea name="meta_description" class="form-control"></textarea>
+                        <textarea name="meta_description" class="form-control">{{old('meta_description')??''}}</textarea>
                         @error('meta_description')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror

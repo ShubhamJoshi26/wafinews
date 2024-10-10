@@ -3,6 +3,7 @@
 <!-- Setting metas -->
 @section('title', $news->title)
 @section('meta_description', $news->meta_description)
+@section('meta_keywords', $news->meta_keywords)
 @section('meta_og_title', $news->meta_title)
 @section('meta_og_description', $news->meta_description)
 @section('meta_og_image', asset($news->image))
@@ -96,7 +97,7 @@
                     <div class="item">
                         <div class="utf_post_block_style clearfix">
                         <div class="utf_post_thumb"> <a href="{{ route('news-details',[strtolower($post->category->name),strtolower($post->subCategory->name),$post->slug]) }}"><img class="img-fluid" src="{{ asset($post->image) }}" alt="" /></a> </div>
-                        <a class="utf_post_cat" href="{{ route('news-details',[strtolower($post->category->name),strtolower($post->subCategory->name),$post->slug]) }}"> {{ $post->auther->name }}</a>
+                        <a class="utf_post_cat" href="{{ route('news-details',[strtolower($post->category->name),strtolower($post->subCategory->name),$post->slug]) }}"> {{ $post->category->name }}</a>
                         <div class="utf_post_content">
                             <h2 class="utf_post_title title-medium"> <a href="{{ route('news-details',[strtolower($post->category->name),strtolower($post->subCategory->name),$post->slug]) }}">{!! truncate($post->title) !!}</a> </h2>
                             <div class="utf_post_meta"> <span class="utf_post_date"><i class="fa fa-clock-o"></i> {{ date('M d, Y', strtotime($post->created_at)) }}</span> </div>

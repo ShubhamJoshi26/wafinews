@@ -29,7 +29,6 @@ class AdminNewsCreateRequest extends FormRequest
             'content' => ['required'],
             'meta_title' => ['max:255'],
             'meta_description' => ['max:255'],
-            'tags' => ['required'],
             'is_breaking_news' => ['boolean'],
             'show_at_slider' => ['boolean'],
             'show_at_popular' => ['boolean'],
