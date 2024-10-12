@@ -106,7 +106,7 @@
                                     @if(count($FeaturedCategories)>0)
                                     @foreach ($FeaturedCategories as $category)
                                     @if (count($category->subCategory)>0)
-                                    <li class="dropdown"> <a href="{{ route('categorylist', [$category->slug]) }}" class="dropdown-toggle" data-toggle="dropdown">{{ $category->name }} <i class="fa fa-angle-down"></i></a>
+                                    <li class="dropdown"> <a href="{{ route('categorylist', [$category->slug]) }}" class="" data-toggle="">{{ $category->name }} <i class="fa fa-angle-down"></i></a>
                                         <ul class="utf_dropdown_menu" role="menu">
                                             @foreach ($category->subCategory as $subcategory)
                                                 <li><a href="{{ route('subcategorylist', [$category->slug,strtolower(str_replace(' ','-',$subcategory->name))]) }}"><i class="fa fa-angle-double-right"></i> {{$subcategory->name}} </a></li>
