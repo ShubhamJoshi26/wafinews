@@ -97,7 +97,7 @@
                                                 <img class="img-fluid" src="{{ asset($popNews->image) }}" alt="" /> </a>
                                             <a class="utf_post_cat"
                                                 href="{{ route('news-details',[strtolower($popNews->category->name),strtolower($popNews->subCategory->name),$popNews->slug]) }}">{{
-                                                $popNews->category->name }}</a>
+                                                $popNews->subCategory->name }}</a>
                                         </div>
                                         <div class="utf_post_content">
                                             <h2 class="utf_post_title title-small"> <a
