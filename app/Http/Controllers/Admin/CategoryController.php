@@ -52,6 +52,9 @@ class CategoryController extends Controller
         $category->language = $request->language;
         $category->show_at_nav = $request->show_at_nav;
         $category->status = $request->status;
+        $category->metadescription = $request->metadescription;
+        $category->metatitle = $request->metatitle;
+        $category->metakeywords = $request->metakeywords;
         $category->save();
 
         toast(__('admin.Created Successfully'),'success')->width('350');
@@ -88,6 +91,9 @@ class CategoryController extends Controller
         $category->language = $request->language;
         $category->show_at_nav = $request->show_at_nav;
         $category->status = $request->status;
+        $category->metadescription = $request->metadescription;
+        $category->metatitle = $request->metatitle;
+        $category->metakeywords = $request->metakeywords;
         $category->save();
 
         toast(__('admin.Update Successfully'),'success')->width('350');

@@ -55,6 +55,27 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="">{{ __('Meta Title') }}</label>
+                        <input name="metatitle" type="text" class="form-control" id="metatitle">
+                        @error('metatitle')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">{{ __('Meta Keywords') }}</label>
+                        <input name="metakeywords" type="text" class="form-control" id="metakeywords">
+                        @error('metakeywords')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">{{ __('Meta Description') }}</label>
+                        <input name="metadescription" type="text" class="form-control" id="metadescription">
+                        @error('metadescription')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <button type="submit" class="btn btn-primary">{{ __('admin.Create') }}</button>
                 </form>
             </div>

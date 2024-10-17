@@ -329,7 +329,7 @@ class HomeController extends Controller
 
     public function categoryList($catSlug)
     {
-        $categoryId = Category::where('slug',$catSlug)->get(['id','name']);
+        $categoryId = Category::where('slug',$catSlug)->get();
         if($categoryId!=null && count($categoryId)>0)
         {
             $allNews = News::where('category_id',$categoryId[0]['id'])->with('subCategory','category')->activeEntries()->latest()
@@ -363,8 +363,7 @@ class HomeController extends Controller
             ->orderBy('updated_at', 'DESC')->take(4)->get();
             $socialLinks = SocialLink::where('status',1)->get();
             $ad = Ad::first();
-            $categoryId = Category::where('id',$subCategory[0]['category_id'])->get(['id','name']);
-            // dd($categoryId);
+            $categoryId = Category::where('id',$subCategory[0]['category_id'])->get();
             return view('news-list',compact('allNews','allSubCategory','categoryId','popularNews','socialLinks','ad','subCategory'));
         }
         else

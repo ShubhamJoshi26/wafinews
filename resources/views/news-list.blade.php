@@ -1,5 +1,13 @@
 @extends('layouts.master')
-
+@section('title', $categoryId[0]->title)
+@section('meta_description', $categoryId[0]->meta_description)
+@section('meta_keywords', $categoryId[0]->meta_keywords)
+@section('meta_og_title', $categoryId[0]->meta_title)
+@section('meta_og_description', $categoryId[0]->meta_description)
+@section('meta_og_image', asset($categoryId[0]->image))
+@section('meta_tw_title', $categoryId[0]->meta_title)
+@section('meta_tw_description', $categoryId[0]->meta_description)
+@section('meta_tw_image', asset($categoryId[0]->image))
 @section('content')
 
 <div class="page-title">
