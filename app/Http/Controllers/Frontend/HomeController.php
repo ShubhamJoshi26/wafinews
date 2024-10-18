@@ -351,7 +351,7 @@ class HomeController extends Controller
     
     public function subCategoryList($category,$subCategory)
     {
-        $subCategory = SubCategory::where('name',str_replace('-',' ',$subCategory))->get(['id','name','category_id']);
+        $subCategory = SubCategory::where('name',str_replace('-',' ',$subCategory))->get(['id','name','category_id','metadescription','metakeywords','metatitle']);
         if($subCategory!=null && count($subCategory)>0)
         {
             $allNews = News::where('sub_category_id',$subCategory[0]['id'])->with('subCategory','category')->activeEntries()->latest()
@@ -364,6 +364,9 @@ class HomeController extends Controller
             $socialLinks = SocialLink::where('status',1)->get();
             $ad = Ad::first();
             $categoryId = Category::where('id',$subCategory[0]['category_id'])->get();
+            $categoryId[0]->metadescription = $subCategory[0]['metadescription'];
+            $categoryId[0]->metakeywords = $subCategory[0]['metakeywords'];
+            $categoryId[0]->metatitle = $subCategory[0]['metatitle'];
             return view('news-list',compact('allNews','allSubCategory','categoryId','popularNews','socialLinks','ad','subCategory'));
         }
         else

@@ -46,6 +46,9 @@ class SubCategoryController extends Controller
         $SubCategory->name = $request->name;
         $SubCategory->is_active = $request->is_active;
         $SubCategory->category_id = $request->category_id;
+        $SubCategory->metadescription = $request->metadescription;
+        $SubCategory->metatitle = $request->metatitle;
+        $SubCategory->metakeywords = $request->metakeywords;
         $SubCategory->save();
 
         toast(__('admin.Created Successfully'),'success')->width('350');
@@ -84,6 +87,9 @@ class SubCategoryController extends Controller
         $SubCategory->name = $request->name;
         $SubCategory->is_active = $request->is_active;
         $SubCategory->category_id = $request->category_id;
+        $SubCategory->metadescription = $request->metadescription;
+        $SubCategory->metatitle = $request->metatitle;
+        $SubCategory->metakeywords = $request->metakeywords;
         $SubCategory->save();
 
         toast(__('admin.Update Successfully'),'success')->width('350');
