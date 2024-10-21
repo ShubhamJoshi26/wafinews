@@ -34,11 +34,11 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800&amp;display=swap"
         rel="stylesheet">
-        {!!$settings['head_script']!!}
+        {!!$settings['head_script']??""!!}
 </head>
 
 <body>
-    {!!$settings['body_script']!!}
+    {!!$settings['body_script']??""!!}
     @php
         $socialLinks = \App\Models\SocialLink::where('status', 1)->get();
         $footerInfo = \App\Models\FooterInfo::where('language', getLangauge())->first();
