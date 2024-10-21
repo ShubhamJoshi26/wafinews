@@ -74,6 +74,16 @@ class SettingController extends Controller
             ['value' => $request->site_seo_keywords]
         );
 
+        Setting::updateOrCreate(
+            ['key' => 'head_script'],
+            ['value' => $request->head_script]
+        );
+
+        Setting::updateOrCreate(
+            ['key' => 'body_script'],
+            ['value' => $request->body_script]
+        );
+
 
         toast(__('admin.Updated Successfully!'), 'success');
 

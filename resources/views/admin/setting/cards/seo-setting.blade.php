@@ -27,6 +27,22 @@
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
+            <div class="form-group">
+
+                <label for="">{{ __('Google Tag Manager Head Script') }}</label>
+                <input name="head_script" type="text" class="form-control" value="{{ $settings['head_script']??'' }}">
+                @error('head_script')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+
+                <label for="">{{ __('Google Tag Manager Body Script') }}</label>
+                <input name="body_script" type="text" class="form-control" value="{{ $settings['body_script']??'' }}">
+                @error('body_script')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
             <button type="submit" class="btn btn-primary">{{ __('admin.Save') }}</button>
         </form>
     </div>
