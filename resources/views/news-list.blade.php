@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', $categoryId[0]->title)
+@section('title', $categoryId[0]->metatitle)
 @section('meta_description', $categoryId[0]->metadescription)
 @section('meta_keywords', $categoryId[0]->metakeywords)
 @section('meta_og_title', $categoryId[0]->metatitle)
