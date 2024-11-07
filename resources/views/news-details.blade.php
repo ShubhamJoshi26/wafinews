@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 <!-- Setting metas -->
-@section('title', $news->title)
+@section('title', $news->meta_title)
 @section('meta_description', $news->meta_description)
 @section('meta_keywords', $news->meta_keywords)
 @section('meta_og_title', $news->meta_title)
