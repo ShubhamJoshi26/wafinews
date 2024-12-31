@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\ProfileController;
@@ -61,3 +62,5 @@ Route::get('/{category_title}',[HomeController::class,'categoryList'])->name('ca
 
 //Sub Category Route
 Route::get('/{category_title}/{subcategory_title}',[HomeController::class,'subCategoryList'])->name('subcategorylist');
+
+Route::post('enquiry',[EnquiryController::class,'store'])->name('enquiry');
