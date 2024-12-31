@@ -47,6 +47,8 @@
       </div>
     </div>    
 </footer>
+
+
 <div class="copyright">
   <div class="container">
     <div class="row">
@@ -59,6 +61,73 @@
     </div>
   </div>
 </div>
+
+
+
+<!-----------------------Popup Form ----------------->
+
+ <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-box">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg show-modal" data-toggle="modal"
+                            data-target="#myModal">
+                            Enquire Now
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content clearfix">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">×</span></button>
+                                    <div class="modal-body pop-body">
+                                        <h3 class="title">Connect With Us</h3>
+                                        <!--<p class="description">Login here Using Email & Password</p>-->
+                                       
+                                        <div class="form-group">
+                                            <span class="input-icon"><i class="fa fa-user"></i></span>
+                                            <input type="Name" class="form-control" placeholder="Enter Your Name">
+                                        </div>
+                                         <div class="form-group">
+                                            <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                                            <input type="email" class="form-control" placeholder="Enter Your Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <span class="input-icon"><i class="fas fa-comment"></i></span>
+                                            <input type="message" class="form-control" placeholder="Message">
+                                        </div>
+                                        
+                                        
+                                        <button class="btn btn-primary solid blank">Submit Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!-----------------------End Popup Form ----------------->
+
+
+
+
+
+
+
+  <div class="floating_btn">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=+91- 9315769585&text=hello">
+      <div class="contact_icon">
+      <i class="fab fa-whatsapp"></i>
+      </div>
+    </a>
+    <p class="text_icon">Talk to us?</p>
+  </div>
 
 <!-- Javascript Files --> 
 <script src="/assets/js/jquery-3.2.1.min.js"></script> 

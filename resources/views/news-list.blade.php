@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', $categoryId[0]->metatitle)
+@section('title', html_entity_decode($categoryId[0]->metatitle))
 @section('meta_description', $categoryId[0]->metadescription)
 @section('meta_keywords', $categoryId[0]->metakeywords)
 @section('meta_og_title', $categoryId[0]->metatitle)
@@ -44,18 +44,18 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-6">
                                 <div class="utf_post_thumb thumb-float-style">
-                                    <a href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}">
+                                    <a href="{{ route('news-details',[strtolower($news->category->name),strtolower(str_replace(' ','-',$news->subCategory->name)),$news->slug]) }}">
                                         <img class="img-fluid" src="{{asset($news->image)}}" alt="" />
                                     </a>
-                                    <a class="utf_post_cat" href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}">{!!$news['subCategory']['name']??$news['category']['name']!!}</a>
+                                    <a class="utf_post_cat" href="{{ route('news-details',[strtolower($news->category->name),strtolower(str_replace(' ','-',$news->subCategory->name)),$news->slug]) }}">{!!$news['subCategory']['name']??$news['category']['name']!!}</a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="utf_post_content">
-                                    <h2 class="utf_post_title title-large"> <a href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}">{!! truncate($news->title)
+                                    <h2 class="utf_post_title title-large"> <a href="{{ route('news-details',[strtolower($news->category->name),strtolower(str_replace(' ','-',$news->subCategory->name)),$news->slug]) }}">{!! truncate($news->title)
                                             !!}</a> </h2>
                                     <div class="utf_post_meta"> <span class="utf_post_author"><i class="fa fa-user"></i>
-                                            <a href="{{ route('news-details',[strtolower($news->category->name),strtolower($news->subCategory->name),$news->slug]) }}"> {{ $news->auther->name }}</a></span> <span
+                                            <a href="{{ route('news-details',[strtolower($news->category->name),strtolower(str_replace(' ','-',$news->subCategory->name)),$news->slug]) }}"> {{ $news->auther->name }}</a></span> <span
                                             class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d, Y',
                                             strtotime($news->created_at)) }}</span> 
                                     </div>
@@ -101,20 +101,20 @@
                                 @if ($key <= 4) <li class="clearfix">
                                     <div class="utf_post_block_style post-float clearfix">
                                         <div class="utf_post_thumb"> <a
-                                                href="{{ route('news-details',[strtolower($popNews->category->name),strtolower($popNews->subCategory->name),$popNews->slug]) }}">
+                                                href="{{ route('news-details',[strtolower($popNews->category->name),strtolower(str_replace(' ','-',$popNews->subCategory->name)),$popNews->slug]) }}">
                                                 <img class="img-fluid" src="{{ asset($popNews->image) }}" alt="" /> </a>
                                             <a class="utf_post_cat"
-                                                href="{{ route('news-details',[strtolower($popNews->category->name),strtolower($popNews->subCategory->name),$popNews->slug]) }}">{{
+                                                href="{{ route('news-details',[strtolower($popNews->category->name),strtolower(str_replace(' ','-',$popNews->subCategory->name)),$popNews->slug]) }}">{{
                                                 $popNews->subCategory->name }}</a>
                                         </div>
                                         <div class="utf_post_content">
                                             <h2 class="utf_post_title title-small"> <a
-                                                    href="{{ route('news-details',[strtolower($popNews->category->name),strtolower($popNews->subCategory->name),$popNews->slug]) }}">{!!
+                                                    href="{{ route('news-details',[strtolower($popNews->category->name),strtolower(str_replace(' ','-',$popNews->subCategory->name)),$popNews->slug]) }}">{!!
                                                     truncate($popNews->title) !!}</a>
                                             </h2>
                                             <div class="utf_post_meta"> <span class="utf_post_author"><i
                                                         class="fa fa-user"></i> <a
-                                                        href="{{ route('news-details',[strtolower($popNews->category->name),strtolower($popNews->subCategory->name),$popNews->slug]) }}">{{
+                                                        href="{{ route('news-details',[strtolower($popNews->category->name),strtolower(str_replace(' ','-',$popNews->subCategory->name)),$popNews->slug]) }}">{{
                                                         $popNews->auther->name }}</a></span>
                                                 <span class="utf_post_date"><i class="fa fa-clock-o"></i>{{ date('M d,
                                                     Y', strtotime($popNews->created_at)) }}</span>

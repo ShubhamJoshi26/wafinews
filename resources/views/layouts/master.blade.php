@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <title>@hasSection('title') @yield('title') @else {{ $settings['site_seo_title'] }} @endif </title>
-    <meta name="description" content="@hasSection('meta_description') @yield('meta_description') @else {{ $settings['site_seo_description'] }} @endif " />
-    <meta name="keywords" content="@hasSection('meta_keywords') @yield('meta_keywords') @else {{ $settings['site_seo_keywords'] }} @endif " />
+    <title>@hasSection('title')@yield('title')@else{{$settings['site_seo_title']}}@endif</title>
+    <meta name="description" content="@hasSection('meta_description')@yield('meta_description')@else{{$settings['site_seo_description']}}@endif" />
+    <meta name="keywords" content="@hasSection('meta_keywords')@yield('meta_keywords')@else{{$settings['site_seo_keywords']}} @endif" />
 
-    <meta name="og:title" content="@yield('meta_og_title')" />
-    <meta name="og:description" content="@yield('meta_og_description')" />
+    <meta name="og:title" content="@hasSection('meta_og_title')@yield('meta_og_title')@else{{$settings['site_seo_title']}}@endif" />
+    <meta name="og:description" content="@hasSection('meta_og_description')@yield('meta_og_description')@else{{$settings['site_seo_description']}}@endif" />
     <meta name="og:image" content="@hasSection('meta_og_image') @yield('meta_og_image') @else {{ asset($settings['site_logo']) }} @endif" />
-    <meta name="twitter:title" content="@yield('meta_tw_title')" />
-    <meta name="twitter:description" content="@yield('meta_tw_description')" />
-    <meta name="twitter:image" content="@yield('meta_tw_image')" />
+    <meta name="twitter:title" content="@hasSection('meta_tw_title')@yield('meta_tw_title')@else{{$settings['site_seo_title']}}@endif" />
+    <meta name="twitter:description" content="@hasSection('meta_tw_description')@yield('meta_tw_description')@else{{$settings['site_seo_description']}}@endif" />
+    <meta name="twitter:image" content="@hasSection('meta_tw_image') @yield('meta_tw_image')@else {{ asset($settings['site_logo']) }} @endif" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset($settings['site_favicon']) }}" type="image/png">
