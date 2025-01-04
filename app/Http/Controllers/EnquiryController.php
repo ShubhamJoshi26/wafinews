@@ -25,9 +25,11 @@ class EnquiryController extends Controller
             }
             $store = Enquiry::create($request->all());
             $subject = "Enquiry Recieved";
-            $message = "New enquiry recieved name: ".$request->name."\n\r Email: ". $request->email . "\n\r Message: ". $request->message;
             $email = 'info@wafinews.com';
-            Mail::to($email)->send( new MailEnquiry($subject, $message));
+            Mail::to($email)->send( new MailEnquiry($subject, $request->all(),'admin'));
+            $visitorSubject = 'Thank you for your interest';
+            $visitorMessage = $request->all();
+            Mail::to($request->email)->send(new MailEnquiry($visitorSubject,$visitorMessage,'visitor'));
             return response()->json(['status'=>'success','message'=>'Enquiry created successfully']);
         }
         catch(Exception $e)

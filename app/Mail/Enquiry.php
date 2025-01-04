@@ -15,13 +15,15 @@ class Enquiry extends Mailable
 
     public $sub;
     public $msg;
+    public $type;
     /**
      * Create a new message instance.
      */
-    public function __construct($sub,$msg)
+    public function __construct($sub,$msg,$type)
     {
         $this->sub = $sub;
         $this->msg = $msg;
+        $this->type = $type;
     }
 
     /**
