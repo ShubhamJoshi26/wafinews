@@ -56,7 +56,9 @@ Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 /** Contact Page Route */
 Route::post('contact', [HomeController::class, 'handleContactFrom'])->name('contact.submit');
-
+Route::view('disclaimer','frontend.disclaimer');
+Route::view('privacy-policy','frontend.privacy-policy');
+Route::view('terms-condition','frontend.terms-condition');
 // Category Route
 Route::get('/{category_title}',[HomeController::class,'categoryList'])->name('categorylist');
 
@@ -64,3 +66,5 @@ Route::get('/{category_title}',[HomeController::class,'categoryList'])->name('ca
 Route::get('/{category_title}/{subcategory_title}',[HomeController::class,'subCategoryList'])->name('subcategorylist');
 
 Route::post('enquiry',[EnquiryController::class,'store'])->name('enquiry');
+
+
